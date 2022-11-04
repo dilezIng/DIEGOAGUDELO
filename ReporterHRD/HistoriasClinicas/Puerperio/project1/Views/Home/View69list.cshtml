@@ -1,0 +1,301 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	View69_List.Page_Render();
+
+	// Check action result
+	if (View69_List.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+@if (!View69.IsExport()) {
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "list";
+var fView69list = currentForm = new ew.Form("fView69list", "list");
+fView69list.formKeyCountName = "@View69_List.FormKeyCountName";
+
+// Form_CustomValidate event
+fView69list.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fView69list.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+// Form object for search
+
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+}
+@if (!View69.IsExport()) {
+<div class="btn-toolbar ew-toolbar">
+@if (View69_List.TotalRecords > 0 && View69_List.ExportOptions.Visible) {
+	View69_List.ExportOptions.Render("body");
+}
+@if (View69_List.ImportOptions.Visible) {
+	View69_List.ImportOptions.Render("body");
+}
+<div class="clearfix"></div>
+</div>
+}
+@{ View69_List.RenderOtherOptions(); }
+@View69_List.ShowPageHeader()
+@View69_List.ShowMessages()
+@if (View69_List.TotalRecords > 0 || View69_List.CurrentAction != "") {
+<div class="card ew-card ew-grid@(View69_List.IsAddOrEdit ? " ew-grid-add-edit" : "") View69">
+<form name="fView69list" id="fView69list" class="form-inline ew-form ew-list-form" action="@AppPath(CurrentPageName())" method="post">
+@if (View69_List.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<div id="gmp_View69" class="@(IsResponsiveLayout() ? "table-responsive " : "")card-body ew-grid-middle-panel">
+@if (View69_List.TotalRecords > 0 || View69.IsGridEdit) { // Begin If TotalRecords > 0
+<table id="tbl_View69list" class="table ew-table"><!-- .ew-table -->
+<thead>
+	<tr class="ew-table-header">
+@{
+
+	// Header row
+	View69_List.RowType = Config.RowTypeHeader;
+
+	// Render list options
+	await View69_List.RenderListOptions();
+
+	// Render list options (header, left)
+	View69_List.ListOptions.Render("header", "left");
+}
+@if (View69.CTNCUENTA.Visible) { // CTNCUENTA.Visible (begin)
+	if (View69_List.SortUrl(View69.CTNCUENTA) == "") {
+		<th data-name="CTNCUENTA" class="@View69.CTNCUENTA.HeaderCellClass"><div id="elh_View69_CTNCUENTA" class="View69_CTNCUENTA"><div class="ew-table-header-caption">@Html.Raw(View69.CTNCUENTA.Caption)</div></div></th>
+	} else {
+		<th data-name="CTNCUENTA" class="@View69.CTNCUENTA.HeaderCellClass"><div class="ew-pointer" onclick="ew.sort(event,'@Html.Raw(View69.SortUrl(View69.CTNCUENTA))',1);"><div id="elh_View69_CTNCUENTA" class="View69_CTNCUENTA">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">@Html.Raw(View69.CTNCUENTA.Caption)</span><span class="ew-table-header-sort">@if (View69.CTNCUENTA.Sort == "ASC") {<i class="fa fa-sort-up"></i>} else if (View69.CTNCUENTA.Sort == "DESC") {<i class="fa fa-sort-down"></i>}</span></div>
+		</div></div></th>
+	}
+} @* CTNCUENTA.Visible (end) *@
+@if (View69.GENTERCER.Visible) { // GENTERCER.Visible (begin)
+	if (View69_List.SortUrl(View69.GENTERCER) == "") {
+		<th data-name="GENTERCER" class="@View69.GENTERCER.HeaderCellClass"><div id="elh_View69_GENTERCER" class="View69_GENTERCER"><div class="ew-table-header-caption">@Html.Raw(View69.GENTERCER.Caption)</div></div></th>
+	} else {
+		<th data-name="GENTERCER" class="@View69.GENTERCER.HeaderCellClass"><div class="ew-pointer" onclick="ew.sort(event,'@Html.Raw(View69.SortUrl(View69.GENTERCER))',1);"><div id="elh_View69_GENTERCER" class="View69_GENTERCER">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">@Html.Raw(View69.GENTERCER.Caption)</span><span class="ew-table-header-sort">@if (View69.GENTERCER.Sort == "ASC") {<i class="fa fa-sort-up"></i>} else if (View69.GENTERCER.Sort == "DESC") {<i class="fa fa-sort-down"></i>}</span></div>
+		</div></div></th>
+	}
+} @* GENTERCER.Visible (end) *@
+@{
+
+	// Render list options (header, right)
+	View69_List.ListOptions.Render("header", "right");
+}
+	</tr>
+</thead>
+<tbody>
+@{ // Begin Code
+if (View69_List.ExportAll && View69_List.IsExport()) {
+	View69_List.StopRecord = View69_List.TotalRecords;
+} else {
+
+	// Set the last record to display
+	if (View69_List.TotalRecords > View69_List.StartRecord + View69_List.DisplayRecords - 1) {
+		View69_List.StopRecord = View69_List.StartRecord + View69_List.DisplayRecords - 1;
+	} else {
+		View69_List.StopRecord = View69_List.TotalRecords;
+	}
+}
+if (View69_List.Recordset != null && View69_List.Recordset.HasRows) {
+	if (!View69_List.Connection.SelectOffset) { // DN
+		for (var i = 1; i <= View69_List.StartRecord - 1; i++) { // Move to first record
+			if (await View69_List.Recordset.ReadAsync()) {
+				View69_List.RecordCount++;
+			}
+		}
+	} else {
+		View69_List.RecordCount = View69_List.StartRecord - 1;
+	}
+} else if (!View69_List.AllowAddDeleteRow && View69_List.StopRecord == 0) {
+	View69_List.StopRecord = View69_List.GridAddRowCount;
+}
+
+// Initialize aggregate
+View69_List.RowType = Config.RowTypeAggregateInit;
+View69_List.ResetAttributes();
+await View69_List.RenderRow();
+
+// Output data rows
+bool eof = (View69_List.Recordset == null); // DN
+while (View69_List.RecordCount < View69_List.StopRecord) { // Begin While
+	if (!View69_List.IsGridAdd && !eof) { // DN
+		eof = !await View69_List.Recordset.ReadAsync();
+	}
+	View69_List.RecordCount++;
+	if (View69_List.RecordCount >= View69_List.StartRecord) {
+		View69_List.RowCnt++;
+
+		// Set up key count
+		View69_List.KeyCount = ConvertToInt(View69_List.RowIndex);
+
+		// Init row class and style
+		View69_List.ResetAttributes();
+		View69_List.CssClass = "";
+		if (View69_List.IsGridAdd) {
+		} else {
+			await View69_List.LoadRowValues(View69_List.Recordset); // Load row values
+		}
+		View69_List.RowType = Config.RowTypeView; // Render view
+
+		// Set up row id / data-rowindex
+		View69_List.RowAttrs.Add("data-rowindex", Convert.ToString(View69_List.RowCnt));
+		View69_List.RowAttrs.Add("id", "r" + Convert.ToString(View69_List.RowCnt) + "_View69");
+		View69_List.RowAttrs.Add("data-rowtype", Convert.ToString(View69_List.RowType));
+
+		// Render row
+		await View69_List.RenderRow();
+
+		// Render list options
+		await View69_List.RenderListOptions();
+	<tr @Html.Raw(View69_List.RowAttributes)>
+	@{
+
+		// Render list options (body, left)
+		View69_List.ListOptions.Render("body", "left", View69_List.RowCnt);
+	}
+	@if (View69.CTNCUENTA.Visible) { // CTNCUENTA.Visible (begin)
+		<td data-name="CTNCUENTA"@Html.Raw(View69.CTNCUENTA.CellAttributes)>
+<span id="el@(View69_List.RowCnt)_View69_CTNCUENTA" class="View69_CTNCUENTA">
+<span @Html.Raw(View69.CTNCUENTA.ViewAttributes)>
+@Html.Raw(View69.CTNCUENTA.GetViewValue())</span>
+</span>
+</td>
+	} @* CTNCUENTA.Visible (end) *@
+	@if (View69.GENTERCER.Visible) { // GENTERCER.Visible (begin)
+		<td data-name="GENTERCER"@Html.Raw(View69.GENTERCER.CellAttributes)>
+<span id="el@(View69_List.RowCnt)_View69_GENTERCER" class="View69_GENTERCER">
+<span @Html.Raw(View69.GENTERCER.ViewAttributes)>
+@Html.Raw(View69.GENTERCER.GetViewValue())</span>
+</span>
+</td>
+	} @* GENTERCER.Visible (end) *@
+	@{
+
+		// Render list options (body, right)
+		View69_List.ListOptions.Render("body", "right", View69_List.RowCnt);
+	}
+	</tr>
+	} @* End if *@
+} @* End While *@
+} @* End Code *@
+</tbody>
+</table><!-- /.ew-table -->
+} @* End If TotalRecords > 0 *@
+@if (Empty(View69_List.CurrentAction)) {
+<input type="hidden" name="action" id="action" value="">
+}
+</div><!-- /.ew-grid-middle-panel -->
+</form><!-- /.ew-list-form -->
+@{ View69_List.CloseRecordset(); }
+		@if (!View69.IsExport()) {
+		<div class="card-footer ew-grid-lower-panel">
+		@if (!View69_List.IsGridAdd) {
+			<form name="ew-pager-form" class="form-inline ew-form ew-pager-form" action="@AppPath(CurrentPageName())">
+@{ View69_List.Pager = View69_List.Pager ?? new PrevNextPager(View69_List.StartRecord, View69_List.DisplayRecords, View69_List.TotalRecords, View69_List.AutoHidePager); }
+@if (View69_List.Pager.RecordCount > 0 && View69_List.Pager.Visible) {
+<div class="ew-pager">
+<span>@Html.Raw(Language.Phrase("Page"))&nbsp;</span>
+<div class="ew-prev-next"><div class="input-group input-group-sm">
+<div class="input-group-prepend">
+<!--first page button-->
+	@if (View69_List.Pager.FirstButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerFirst")" href="@AppPath(View69_List.PageUrl)start=@View69_List.Pager.FirstButton.Start"><i class="icon-first ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerFirst")"><i class="icon-first ew-icon"></i></a>
+	}
+<!--previous page button-->
+	@if (View69_List.Pager.PrevButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerPrevious")" href="@AppPath(View69_List.PageUrl)start=@View69_List.Pager.PrevButton.Start"><i class="icon-prev ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerPrevious")"><i class="icon-prev ew-icon"></i></a>
+	}
+</div>
+<!--current page number-->
+	<input class="form-control" type="text" name="@Config.TablePageNumber" value="@View69_List.Pager.CurrentPageNumber">
+<div class="input-group-append">
+<!--next page button-->
+	@if (View69_List.Pager.NextButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerNext")" href="@AppPath(View69_List.PageUrl)start=@View69_List.Pager.NextButton.Start"><i class="icon-next ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerNext")"><i class="icon-next ew-icon"></i></a>
+	}
+<!--last page button-->
+	@if (View69_List.Pager.LastButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerLast")" href="@AppPath(View69_List.PageUrl)start=@View69_List.Pager.LastButton.Start"><i class="icon-last ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerLast")"><i class="icon-last ew-icon"></i></a>
+	}
+</div>
+</div>
+</div>
+<span>&nbsp;@Html.Raw(Language.Phrase("Of"))&nbsp;@View69_List.Pager.PageCount</span>
+<div class="clearfix"></div>
+</div>
+}
+@if (View69_List.Pager.RecordCount > 0) {
+	<div class="ew-pager ew-rec">
+		<span>@Html.Raw(Language.Phrase("Record"))&nbsp;@(View69_List.Pager.FromIndex)&nbsp;@Html.Raw(Language.Phrase("To"))&nbsp;@(View69_List.Pager.ToIndex)&nbsp;@Html.Raw(Language.Phrase("Of"))&nbsp;@(View69_List.Pager.RecordCount)</span>
+	</div>
+}
+			</form>
+		}
+		<div class="ew-list-other-options">
+		@View69_List.OtherOptions.RenderBody("bottom")
+		</div>
+		<div class="clearfix"></div>
+		</div>
+		}
+</div><!-- /.ew-grid -->
+}
+@if (View69_List.TotalRecords <= 0 && View69_List.CurrentAction == "") { // Show other options
+<div class="ew-list-other-options">
+@View69_List.OtherOptions.ForEach(opt => opt.ButtonClass = "").RenderBody()
+</div>
+<div class="clearfix"></div>
+}
+@View69_List.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+@if (!View69.IsExport()) {
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>
+}

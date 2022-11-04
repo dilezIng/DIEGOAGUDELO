@@ -1,0 +1,292 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	VCNVISITANTE_Add.Page_Render();
+
+	// Check action result
+	if (VCNVISITANTE_Add.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "add";
+var fVCNVISITANTEadd = currentForm = new ew.Form("fVCNVISITANTEadd", "add");
+
+// Validate form
+fVCNVISITANTEadd.validate = function() {
+	if (!this.validateRequired)
+		return true; // Ignore validation
+	var $ = jQuery, fobj = this.getForm(), $fobj = $(fobj);
+	if ($fobj.find("#confirm").val() == "F")
+		return true;
+	var elm, felm, uelm, addcnt = 0;
+	var $k = $fobj.find("#" + this.formKeyCountName); // Get key_count
+	var rowcnt = ($k[0]) ? parseInt($k.val(), 10) : 1;
+	var startcnt = (rowcnt == 0) ? 0 : 1; // Check rowcnt == 0 => Inline-Add
+	var gridinsert = ["insert", "gridinsert"].includes($fobj.find("#action").val()) && $k[0];
+	for (var i = startcnt; i <= rowcnt; i++) {
+		var infix = ($k[0]) ? String(i) : "";
+		$fobj.data("rowindex", infix);
+	@if (VCNVISITANTE_Add.VTEDOCUMENTO.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTEDOCUMENTO");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTEDOCUMENTO.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTEDOCUMENTO.Caption)))");
+		</text>
+	}
+	@if (VCNVISITANTE_Add.VTETIPODOCUM.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTETIPODOCUM");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTETIPODOCUM.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTETIPODOCUM.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_VTETIPODOCUM");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTETIPODOCUM.ErrorMessage))");
+	@if (VCNVISITANTE_Add.VTEPRINOM.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTEPRINOM");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTEPRINOM.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTEPRINOM.Caption)))");
+		</text>
+	}
+	@if (VCNVISITANTE_Add.VTESEGNOM.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTESEGNOM");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTESEGNOM.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTESEGNOM.Caption)))");
+		</text>
+	}
+	@if (VCNVISITANTE_Add.VTEPRIAPE.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTEPRIAPE");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTEPRIAPE.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTEPRIAPE.Caption)))");
+		</text>
+	}
+	@if (VCNVISITANTE_Add.VTESEGAPE.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTESEGAPE");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTESEGAPE.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTESEGAPE.Caption)))");
+		</text>
+	}
+	@if (VCNVISITANTE_Add.VTEGENERO.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTEGENERO");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTEGENERO.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTEGENERO.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_VTEGENERO");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.VTEGENERO.ErrorMessage))");
+	@if (VCNVISITANTE_Add.VTEFOTO.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_VTEFOTO");
+		elm = this.getElements("fn_x" + infix + "_VTEFOTO");
+		if (felm && elm && !ew.hasValue(elm))
+			return this.onError(felm, "@Html.Raw(JsEncode(VCNVISITANTE.VTEFOTO.RequiredErrorMessage.Replace("%s", VCNVISITANTE.VTEFOTO.Caption)))");
+		</text>
+	}
+	@if (VCNVISITANTE_Add.OptimisticLockField.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_OptimisticLockField");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.OptimisticLockField.RequiredErrorMessage.Replace("%s", VCNVISITANTE.OptimisticLockField.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_OptimisticLockField");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(VCNVISITANTE.OptimisticLockField.ErrorMessage))");
+
+		// Fire Form_CustomValidate event
+		if (!this.Form_CustomValidate(fobj))
+			return false;
+	}
+
+	// Process detail forms
+	var dfs = $fobj.find("input[name='detailpage']").get();
+	for (var i = 0; i < dfs.length; i++) {
+		var df = dfs[i], val = df.value;
+		if (val && ew.forms[val])
+			if (!ew.forms[val].validate())
+				return false;
+	}
+	return true;
+}
+
+// Form_CustomValidate event
+fVCNVISITANTEadd.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fVCNVISITANTEadd.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+// Form object for search
+
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+@VCNVISITANTE_Add.ShowPageHeader()
+@VCNVISITANTE_Add.ShowMessages()
+<form name="fVCNVISITANTEadd" id="fVCNVISITANTEadd" class="@VCNVISITANTE_Add.FormClassName" action="@AppPath(CurrentPageName())" method="post">
+@if (VCNVISITANTE_Add.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<input type="hidden" name="t" value="VCNVISITANTE">
+<input type="hidden" name="action" id="action" value="insert">
+<input type="hidden" name="modal" value="@ConvertToInt(VCNVISITANTE_Add.IsModal)">
+<div class="ew-add-div"><!-- page* -->
+@if (VCNVISITANTE.VTEDOCUMENTO.Visible) { // VTEDOCUMENTO.Visible (begin)
+	<div id="r_VTEDOCUMENTO" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTEDOCUMENTO" for="x_VTEDOCUMENTO" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.Caption)@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTEDOCUMENTO.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEDOCUMENTO">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTEDOCUMENTO" name="x_VTEDOCUMENTO" id="x_VTEDOCUMENTO" size="30" maxlength="17" placeholder="@VCNVISITANTE.VTEDOCUMENTO.PlaceHolder" value="@VCNVISITANTE.VTEDOCUMENTO.EditValue" @Html.Raw(VCNVISITANTE.VTEDOCUMENTO.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.CustomMessage)</div></div>
+	</div>
+} @* VTEDOCUMENTO.Visible (end) *@
+@if (VCNVISITANTE.VTETIPODOCUM.Visible) { // VTETIPODOCUM.Visible (begin)
+	<div id="r_VTETIPODOCUM" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTETIPODOCUM" for="x_VTETIPODOCUM" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTETIPODOCUM.Caption)@Html.Raw(VCNVISITANTE.VTETIPODOCUM.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTETIPODOCUM.CellAttributes)>
+<span id="el_VCNVISITANTE_VTETIPODOCUM">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTETIPODOCUM" name="x_VTETIPODOCUM" id="x_VTETIPODOCUM" size="30" placeholder="@VCNVISITANTE.VTETIPODOCUM.PlaceHolder" value="@VCNVISITANTE.VTETIPODOCUM.EditValue" @Html.Raw(VCNVISITANTE.VTETIPODOCUM.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTETIPODOCUM.CustomMessage)</div></div>
+	</div>
+} @* VTETIPODOCUM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRINOM.Visible) { // VTEPRINOM.Visible (begin)
+	<div id="r_VTEPRINOM" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTEPRINOM" for="x_VTEPRINOM" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTEPRINOM.Caption)@Html.Raw(VCNVISITANTE.VTEPRINOM.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTEPRINOM.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEPRINOM">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTEPRINOM" name="x_VTEPRINOM" id="x_VTEPRINOM" size="30" maxlength="200" placeholder="@VCNVISITANTE.VTEPRINOM.PlaceHolder" value="@VCNVISITANTE.VTEPRINOM.EditValue" @Html.Raw(VCNVISITANTE.VTEPRINOM.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTEPRINOM.CustomMessage)</div></div>
+	</div>
+} @* VTEPRINOM.Visible (end) *@
+@if (VCNVISITANTE.VTESEGNOM.Visible) { // VTESEGNOM.Visible (begin)
+	<div id="r_VTESEGNOM" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTESEGNOM" for="x_VTESEGNOM" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTESEGNOM.Caption)@Html.Raw(VCNVISITANTE.VTESEGNOM.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTESEGNOM.CellAttributes)>
+<span id="el_VCNVISITANTE_VTESEGNOM">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTESEGNOM" name="x_VTESEGNOM" id="x_VTESEGNOM" size="30" maxlength="200" placeholder="@VCNVISITANTE.VTESEGNOM.PlaceHolder" value="@VCNVISITANTE.VTESEGNOM.EditValue" @Html.Raw(VCNVISITANTE.VTESEGNOM.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTESEGNOM.CustomMessage)</div></div>
+	</div>
+} @* VTESEGNOM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRIAPE.Visible) { // VTEPRIAPE.Visible (begin)
+	<div id="r_VTEPRIAPE" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTEPRIAPE" for="x_VTEPRIAPE" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTEPRIAPE.Caption)@Html.Raw(VCNVISITANTE.VTEPRIAPE.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTEPRIAPE.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEPRIAPE">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTEPRIAPE" name="x_VTEPRIAPE" id="x_VTEPRIAPE" size="30" maxlength="200" placeholder="@VCNVISITANTE.VTEPRIAPE.PlaceHolder" value="@VCNVISITANTE.VTEPRIAPE.EditValue" @Html.Raw(VCNVISITANTE.VTEPRIAPE.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTEPRIAPE.CustomMessage)</div></div>
+	</div>
+} @* VTEPRIAPE.Visible (end) *@
+@if (VCNVISITANTE.VTESEGAPE.Visible) { // VTESEGAPE.Visible (begin)
+	<div id="r_VTESEGAPE" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTESEGAPE" for="x_VTESEGAPE" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTESEGAPE.Caption)@Html.Raw(VCNVISITANTE.VTESEGAPE.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTESEGAPE.CellAttributes)>
+<span id="el_VCNVISITANTE_VTESEGAPE">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTESEGAPE" name="x_VTESEGAPE" id="x_VTESEGAPE" size="30" maxlength="200" placeholder="@VCNVISITANTE.VTESEGAPE.PlaceHolder" value="@VCNVISITANTE.VTESEGAPE.EditValue" @Html.Raw(VCNVISITANTE.VTESEGAPE.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTESEGAPE.CustomMessage)</div></div>
+	</div>
+} @* VTESEGAPE.Visible (end) *@
+@if (VCNVISITANTE.VTEGENERO.Visible) { // VTEGENERO.Visible (begin)
+	<div id="r_VTEGENERO" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTEGENERO" for="x_VTEGENERO" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTEGENERO.Caption)@Html.Raw(VCNVISITANTE.VTEGENERO.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTEGENERO.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEGENERO">
+<input type="text" data-table="VCNVISITANTE" data-field="x_VTEGENERO" name="x_VTEGENERO" id="x_VTEGENERO" size="30" placeholder="@VCNVISITANTE.VTEGENERO.PlaceHolder" value="@VCNVISITANTE.VTEGENERO.EditValue" @Html.Raw(VCNVISITANTE.VTEGENERO.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.VTEGENERO.CustomMessage)</div></div>
+	</div>
+} @* VTEGENERO.Visible (end) *@
+@if (VCNVISITANTE.VTEFOTO.Visible) { // VTEFOTO.Visible (begin)
+	<div id="r_VTEFOTO" class="form-group row">
+		<label id="elh_VCNVISITANTE_VTEFOTO" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.VTEFOTO.Caption)@Html.Raw(VCNVISITANTE.VTEFOTO.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.VTEFOTO.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEFOTO">
+<div id="fd_x_VTEFOTO">
+<span title="@(!Empty(VCNVISITANTE.VTEFOTO.Title) ? VCNVISITANTE.VTEFOTO.Title : Language.Phrase("ChooseFile"))" class="btn btn-default btn-sm fileinput-button ew-tooltip @((VCNVISITANTE.VTEFOTO.ReadOnly || VCNVISITANTE.VTEFOTO.Disabled) ? " d-none" : "")">
+	<span>@Html.Raw(Language.Phrase("ChooseFileBtn"))</span>
+	<input type="file" title=" " data-table="VCNVISITANTE" data-field="x_VTEFOTO" name="x_VTEFOTO" id="x_VTEFOTO" @Html.Raw(VCNVISITANTE.VTEFOTO.EditAttributes)>
+</span>
+<input type="hidden" name="fn_x_VTEFOTO" id="fn_x_VTEFOTO" value="@VCNVISITANTE.VTEFOTO.Upload.FileName">
+<input type="hidden" name="fa_x_VTEFOTO" id="fa_x_VTEFOTO" value="0">
+<input type="hidden" name="fs_x_VTEFOTO" id="fs_x_VTEFOTO" value="0">
+<input type="hidden" name="fx_x_VTEFOTO" id="fx_x_VTEFOTO" value="@VCNVISITANTE.VTEFOTO.UploadAllowedFileExtensions">
+<input type="hidden" name="fm_x_VTEFOTO" id="fm_x_VTEFOTO" value="@VCNVISITANTE.VTEFOTO.UploadMaxFileSize">
+</div>
+<table id="ft_x_VTEFOTO" class="table table-sm float-left ew-upload-table"><tbody class="files"></tbody></table>
+</span>
+@Html.Raw(VCNVISITANTE.VTEFOTO.CustomMessage)</div></div>
+	</div>
+} @* VTEFOTO.Visible (end) *@
+@if (VCNVISITANTE.OptimisticLockField.Visible) { // OptimisticLockField.Visible (begin)
+	<div id="r_OptimisticLockField" class="form-group row">
+		<label id="elh_VCNVISITANTE_OptimisticLockField" for="x_OptimisticLockField" class="@VCNVISITANTE_Add.LeftColumnClass">@Html.Raw(VCNVISITANTE.OptimisticLockField.Caption)@Html.Raw(VCNVISITANTE.OptimisticLockField.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@VCNVISITANTE_Add.RightColumnClass"><div @Html.Raw(VCNVISITANTE.OptimisticLockField.CellAttributes)>
+<span id="el_VCNVISITANTE_OptimisticLockField">
+<input type="text" data-table="VCNVISITANTE" data-field="x_OptimisticLockField" name="x_OptimisticLockField" id="x_OptimisticLockField" size="30" placeholder="@VCNVISITANTE.OptimisticLockField.PlaceHolder" value="@VCNVISITANTE.OptimisticLockField.EditValue" @Html.Raw(VCNVISITANTE.OptimisticLockField.EditAttributes)>
+</span>
+@Html.Raw(VCNVISITANTE.OptimisticLockField.CustomMessage)</div></div>
+	</div>
+} @* OptimisticLockField.Visible (end) *@
+</div><!-- /page* -->
+@{ VCNVISITANTE_Add.CloseRecordset(); }
+@if (!VCNVISITANTE_Add.IsModal) {
+<div class="form-group row"><!-- buttons .form-group -->
+	<div class="@VCNVISITANTE_Add.OffsetColumnClass"><!-- buttons offset -->
+<button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit">@Html.Raw(Language.Phrase("AddBtn"))</button>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-href="@AppPath(VCNVISITANTE_Add.ReturnUrl)"> @Html.Raw(Language.Phrase("CancelBtn"))</button>
+	</div><!-- /buttons offset -->
+</div><!-- /buttons .form-group -->
+}
+</form>
+@VCNVISITANTE_Add.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>

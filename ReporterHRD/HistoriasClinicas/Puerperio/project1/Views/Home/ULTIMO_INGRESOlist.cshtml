@@ -1,0 +1,338 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	ULTIMO_INGRESO_List.Page_Render();
+
+	// Check action result
+	if (ULTIMO_INGRESO_List.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+@if (!ULTIMO_INGRESO.IsExport()) {
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "list";
+var fULTIMO_INGRESOlist = currentForm = new ew.Form("fULTIMO_INGRESOlist", "list");
+fULTIMO_INGRESOlist.formKeyCountName = "@ULTIMO_INGRESO_List.FormKeyCountName";
+
+// Form_CustomValidate event
+fULTIMO_INGRESOlist.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fULTIMO_INGRESOlist.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+// Form object for search
+
+var fULTIMO_INGRESOlistsrch = currentSearchForm = new ew.Form("fULTIMO_INGRESOlistsrch");
+
+// Filters
+fULTIMO_INGRESOlistsrch.filterList = @Html.Raw(await ULTIMO_INGRESO_List.GetFilterList());
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+}
+@if (!ULTIMO_INGRESO.IsExport()) {
+<div class="btn-toolbar ew-toolbar">
+@if (ULTIMO_INGRESO_List.TotalRecords > 0 && ULTIMO_INGRESO_List.ExportOptions.Visible) {
+	ULTIMO_INGRESO_List.ExportOptions.Render("body");
+}
+@if (ULTIMO_INGRESO_List.ImportOptions.Visible) {
+	ULTIMO_INGRESO_List.ImportOptions.Render("body");
+}
+@if (ULTIMO_INGRESO_List.SearchOptions.Visible) {
+	ULTIMO_INGRESO_List.SearchOptions.Render("body");
+}
+@if (ULTIMO_INGRESO_List.FilterOptions.Visible) {
+	ULTIMO_INGRESO_List.FilterOptions.Render("body");
+}
+<div class="clearfix"></div>
+</div>
+}
+@{ ULTIMO_INGRESO_List.RenderOtherOptions(); }
+@{
+if (!ULTIMO_INGRESO_List.IsExport() && Empty(ULTIMO_INGRESO_List.CurrentAction)) { // Begin search form
+<form name="fULTIMO_INGRESOlistsrch" id="fULTIMO_INGRESOlistsrch" class="form-inline ew-form ew-ext-search-form" action="@AppPath(CurrentPageName())">
+<div id="fULTIMO_INGRESOlistsrch-search-panel" class="ew-search-panel collapse@(!Empty(ULTIMO_INGRESO_List.SearchWhere) ? " show" : " show")">
+<input type="hidden" name="cmd" value="search">
+<div class="ew-basic-search">
+<div id="xsr_1" class="ew-row d-sm-flex">
+	<div class="ew-quick-search input-group">
+	<input type="text" name="@Config.TableBasicSearch" id="@Config.TableBasicSearch" class="form-control" value="@ULTIMO_INGRESO_List.BasicSearch.SessionKeyword" placeholder="@Language.Phrase("Search")">
+	<input type="hidden" name="@Config.TableBasicSearchType" id="@Config.TableBasicSearchType" value="@ULTIMO_INGRESO_List.BasicSearch.SessionType">
+	<div class="input-group-append">
+		<button class="btn btn-primary" name="btn-submit" id="btn-submit" type="submit">@Html.Raw(Language.Phrase("SearchBtn"))</button>
+		<button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle dropdown-toggle-split" aria-haspopup="true" aria-expanded="false"><span id="searchtype">@Html.Raw(ULTIMO_INGRESO_List.BasicSearch.TypeNameShort)</span></button>
+		<div class="dropdown-menu dropdown-menu-right">
+			<a class="dropdown-item @((ULTIMO_INGRESO_List.BasicSearch.SessionType == "") ? " active" : "")" href="javascript:void(0);" onclick="ew.setSearchType(this)">@Html.Raw(Language.Phrase("QuickSearchAuto"))</a>
+			<a class="dropdown-item @((ULTIMO_INGRESO_List.BasicSearch.SessionType == "=") ? "active" : "")" href="javascript:void(0);" onclick="ew.setSearchType(this,'=')">@Html.Raw(Language.Phrase("QuickSearchExact"))</a>
+			<a class="dropdown-item @((ULTIMO_INGRESO_List.BasicSearch.SessionType == "AND") ? "active" : "")" href="javascript:void(0);" onclick="ew.setSearchType(this,'AND')">@Html.Raw(Language.Phrase("QuickSearchAll"))</a>
+			<a class="dropdown-item @((ULTIMO_INGRESO_List.BasicSearch.SessionType == "OR") ? "active" : "")" href="javascript:void(0);" onclick="ew.setSearchType(this,'OR')">@Html.Raw(Language.Phrase("QuickSearchAny"))</a>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+</form>
+} @* End search form *@
+}
+@ULTIMO_INGRESO_List.ShowPageHeader()
+@ULTIMO_INGRESO_List.ShowMessages()
+@if (ULTIMO_INGRESO_List.TotalRecords > 0 || ULTIMO_INGRESO_List.CurrentAction != "") {
+<div class="card ew-card ew-grid@(ULTIMO_INGRESO_List.IsAddOrEdit ? " ew-grid-add-edit" : "") ULTIMO_INGRESO">
+<form name="fULTIMO_INGRESOlist" id="fULTIMO_INGRESOlist" class="form-inline ew-form ew-list-form" action="@AppPath(CurrentPageName())" method="post">
+@if (ULTIMO_INGRESO_List.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<div id="gmp_ULTIMO_INGRESO" class="@(IsResponsiveLayout() ? "table-responsive " : "")card-body ew-grid-middle-panel">
+@if (ULTIMO_INGRESO_List.TotalRecords > 0 || ULTIMO_INGRESO.IsGridEdit) { // Begin If TotalRecords > 0
+<table id="tbl_ULTIMO_INGRESOlist" class="table ew-table"><!-- .ew-table -->
+<thead>
+	<tr class="ew-table-header">
+@{
+
+	// Header row
+	ULTIMO_INGRESO_List.RowType = Config.RowTypeHeader;
+
+	// Render list options
+	await ULTIMO_INGRESO_List.RenderListOptions();
+
+	// Render list options (header, left)
+	ULTIMO_INGRESO_List.ListOptions.Render("header", "left");
+}
+@if (ULTIMO_INGRESO.ULT_ING.Visible) { // ULT_ING.Visible (begin)
+	if (ULTIMO_INGRESO_List.SortUrl(ULTIMO_INGRESO.ULT_ING) == "") {
+		<th data-name="ULT_ING" class="@ULTIMO_INGRESO.ULT_ING.HeaderCellClass"><div id="elh_ULTIMO_INGRESO_ULT_ING" class="ULTIMO_INGRESO_ULT_ING"><div class="ew-table-header-caption">@Html.Raw(ULTIMO_INGRESO.ULT_ING.Caption)</div></div></th>
+	} else {
+		<th data-name="ULT_ING" class="@ULTIMO_INGRESO.ULT_ING.HeaderCellClass"><div class="ew-pointer" onclick="ew.sort(event,'@Html.Raw(ULTIMO_INGRESO.SortUrl(ULTIMO_INGRESO.ULT_ING))',1);"><div id="elh_ULTIMO_INGRESO_ULT_ING" class="ULTIMO_INGRESO_ULT_ING">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">@Html.Raw(ULTIMO_INGRESO.ULT_ING.Caption)</span><span class="ew-table-header-sort">@if (ULTIMO_INGRESO.ULT_ING.Sort == "ASC") {<i class="fa fa-sort-up"></i>} else if (ULTIMO_INGRESO.ULT_ING.Sort == "DESC") {<i class="fa fa-sort-down"></i>}</span></div>
+		</div></div></th>
+	}
+} @* ULT_ING.Visible (end) *@
+@if (ULTIMO_INGRESO.PACNUMDOC.Visible) { // PACNUMDOC.Visible (begin)
+	if (ULTIMO_INGRESO_List.SortUrl(ULTIMO_INGRESO.PACNUMDOC) == "") {
+		<th data-name="PACNUMDOC" class="@ULTIMO_INGRESO.PACNUMDOC.HeaderCellClass"><div id="elh_ULTIMO_INGRESO_PACNUMDOC" class="ULTIMO_INGRESO_PACNUMDOC"><div class="ew-table-header-caption">@Html.Raw(ULTIMO_INGRESO.PACNUMDOC.Caption)</div></div></th>
+	} else {
+		<th data-name="PACNUMDOC" class="@ULTIMO_INGRESO.PACNUMDOC.HeaderCellClass"><div class="ew-pointer" onclick="ew.sort(event,'@Html.Raw(ULTIMO_INGRESO.SortUrl(ULTIMO_INGRESO.PACNUMDOC))',1);"><div id="elh_ULTIMO_INGRESO_PACNUMDOC" class="ULTIMO_INGRESO_PACNUMDOC">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption">@Html.Raw(ULTIMO_INGRESO.PACNUMDOC.Caption)@Html.Raw(Language.Phrase("SrchLegend"))</span><span class="ew-table-header-sort">@if (ULTIMO_INGRESO.PACNUMDOC.Sort == "ASC") {<i class="fa fa-sort-up"></i>} else if (ULTIMO_INGRESO.PACNUMDOC.Sort == "DESC") {<i class="fa fa-sort-down"></i>}</span></div>
+		</div></div></th>
+	}
+} @* PACNUMDOC.Visible (end) *@
+@{
+
+	// Render list options (header, right)
+	ULTIMO_INGRESO_List.ListOptions.Render("header", "right");
+}
+	</tr>
+</thead>
+<tbody>
+@{ // Begin Code
+if (ULTIMO_INGRESO_List.ExportAll && ULTIMO_INGRESO_List.IsExport()) {
+	ULTIMO_INGRESO_List.StopRecord = ULTIMO_INGRESO_List.TotalRecords;
+} else {
+
+	// Set the last record to display
+	if (ULTIMO_INGRESO_List.TotalRecords > ULTIMO_INGRESO_List.StartRecord + ULTIMO_INGRESO_List.DisplayRecords - 1) {
+		ULTIMO_INGRESO_List.StopRecord = ULTIMO_INGRESO_List.StartRecord + ULTIMO_INGRESO_List.DisplayRecords - 1;
+	} else {
+		ULTIMO_INGRESO_List.StopRecord = ULTIMO_INGRESO_List.TotalRecords;
+	}
+}
+if (ULTIMO_INGRESO_List.Recordset != null && ULTIMO_INGRESO_List.Recordset.HasRows) {
+	if (!ULTIMO_INGRESO_List.Connection.SelectOffset) { // DN
+		for (var i = 1; i <= ULTIMO_INGRESO_List.StartRecord - 1; i++) { // Move to first record
+			if (await ULTIMO_INGRESO_List.Recordset.ReadAsync()) {
+				ULTIMO_INGRESO_List.RecordCount++;
+			}
+		}
+	} else {
+		ULTIMO_INGRESO_List.RecordCount = ULTIMO_INGRESO_List.StartRecord - 1;
+	}
+} else if (!ULTIMO_INGRESO_List.AllowAddDeleteRow && ULTIMO_INGRESO_List.StopRecord == 0) {
+	ULTIMO_INGRESO_List.StopRecord = ULTIMO_INGRESO_List.GridAddRowCount;
+}
+
+// Initialize aggregate
+ULTIMO_INGRESO_List.RowType = Config.RowTypeAggregateInit;
+ULTIMO_INGRESO_List.ResetAttributes();
+await ULTIMO_INGRESO_List.RenderRow();
+
+// Output data rows
+bool eof = (ULTIMO_INGRESO_List.Recordset == null); // DN
+while (ULTIMO_INGRESO_List.RecordCount < ULTIMO_INGRESO_List.StopRecord) { // Begin While
+	if (!ULTIMO_INGRESO_List.IsGridAdd && !eof) { // DN
+		eof = !await ULTIMO_INGRESO_List.Recordset.ReadAsync();
+	}
+	ULTIMO_INGRESO_List.RecordCount++;
+	if (ULTIMO_INGRESO_List.RecordCount >= ULTIMO_INGRESO_List.StartRecord) {
+		ULTIMO_INGRESO_List.RowCnt++;
+
+		// Set up key count
+		ULTIMO_INGRESO_List.KeyCount = ConvertToInt(ULTIMO_INGRESO_List.RowIndex);
+
+		// Init row class and style
+		ULTIMO_INGRESO_List.ResetAttributes();
+		ULTIMO_INGRESO_List.CssClass = "";
+		if (ULTIMO_INGRESO_List.IsGridAdd) {
+		} else {
+			await ULTIMO_INGRESO_List.LoadRowValues(ULTIMO_INGRESO_List.Recordset); // Load row values
+		}
+		ULTIMO_INGRESO_List.RowType = Config.RowTypeView; // Render view
+
+		// Set up row id / data-rowindex
+		ULTIMO_INGRESO_List.RowAttrs.Add("data-rowindex", Convert.ToString(ULTIMO_INGRESO_List.RowCnt));
+		ULTIMO_INGRESO_List.RowAttrs.Add("id", "r" + Convert.ToString(ULTIMO_INGRESO_List.RowCnt) + "_ULTIMO_INGRESO");
+		ULTIMO_INGRESO_List.RowAttrs.Add("data-rowtype", Convert.ToString(ULTIMO_INGRESO_List.RowType));
+
+		// Render row
+		await ULTIMO_INGRESO_List.RenderRow();
+
+		// Render list options
+		await ULTIMO_INGRESO_List.RenderListOptions();
+	<tr @Html.Raw(ULTIMO_INGRESO_List.RowAttributes)>
+	@{
+
+		// Render list options (body, left)
+		ULTIMO_INGRESO_List.ListOptions.Render("body", "left", ULTIMO_INGRESO_List.RowCnt);
+	}
+	@if (ULTIMO_INGRESO.ULT_ING.Visible) { // ULT_ING.Visible (begin)
+		<td data-name="ULT_ING"@Html.Raw(ULTIMO_INGRESO.ULT_ING.CellAttributes)>
+<span id="el@(ULTIMO_INGRESO_List.RowCnt)_ULTIMO_INGRESO_ULT_ING" class="ULTIMO_INGRESO_ULT_ING">
+<span @Html.Raw(ULTIMO_INGRESO.ULT_ING.ViewAttributes)>
+@Html.Raw(ULTIMO_INGRESO.ULT_ING.GetViewValue())</span>
+</span>
+</td>
+	} @* ULT_ING.Visible (end) *@
+	@if (ULTIMO_INGRESO.PACNUMDOC.Visible) { // PACNUMDOC.Visible (begin)
+		<td data-name="PACNUMDOC"@Html.Raw(ULTIMO_INGRESO.PACNUMDOC.CellAttributes)>
+<span id="el@(ULTIMO_INGRESO_List.RowCnt)_ULTIMO_INGRESO_PACNUMDOC" class="ULTIMO_INGRESO_PACNUMDOC">
+<span @Html.Raw(ULTIMO_INGRESO.PACNUMDOC.ViewAttributes)>
+@Html.Raw(ULTIMO_INGRESO.PACNUMDOC.GetViewValue())</span>
+</span>
+</td>
+	} @* PACNUMDOC.Visible (end) *@
+	@{
+
+		// Render list options (body, right)
+		ULTIMO_INGRESO_List.ListOptions.Render("body", "right", ULTIMO_INGRESO_List.RowCnt);
+	}
+	</tr>
+	} @* End if *@
+} @* End While *@
+} @* End Code *@
+</tbody>
+</table><!-- /.ew-table -->
+} @* End If TotalRecords > 0 *@
+@if (Empty(ULTIMO_INGRESO_List.CurrentAction)) {
+<input type="hidden" name="action" id="action" value="">
+}
+</div><!-- /.ew-grid-middle-panel -->
+</form><!-- /.ew-list-form -->
+@{ ULTIMO_INGRESO_List.CloseRecordset(); }
+		@if (!ULTIMO_INGRESO.IsExport()) {
+		<div class="card-footer ew-grid-lower-panel">
+		@if (!ULTIMO_INGRESO_List.IsGridAdd) {
+			<form name="ew-pager-form" class="form-inline ew-form ew-pager-form" action="@AppPath(CurrentPageName())">
+@{ ULTIMO_INGRESO_List.Pager = ULTIMO_INGRESO_List.Pager ?? new PrevNextPager(ULTIMO_INGRESO_List.StartRecord, ULTIMO_INGRESO_List.DisplayRecords, ULTIMO_INGRESO_List.TotalRecords, ULTIMO_INGRESO_List.AutoHidePager); }
+@if (ULTIMO_INGRESO_List.Pager.RecordCount > 0 && ULTIMO_INGRESO_List.Pager.Visible) {
+<div class="ew-pager">
+<span>@Html.Raw(Language.Phrase("Page"))&nbsp;</span>
+<div class="ew-prev-next"><div class="input-group input-group-sm">
+<div class="input-group-prepend">
+<!--first page button-->
+	@if (ULTIMO_INGRESO_List.Pager.FirstButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerFirst")" href="@AppPath(ULTIMO_INGRESO_List.PageUrl)start=@ULTIMO_INGRESO_List.Pager.FirstButton.Start"><i class="icon-first ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerFirst")"><i class="icon-first ew-icon"></i></a>
+	}
+<!--previous page button-->
+	@if (ULTIMO_INGRESO_List.Pager.PrevButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerPrevious")" href="@AppPath(ULTIMO_INGRESO_List.PageUrl)start=@ULTIMO_INGRESO_List.Pager.PrevButton.Start"><i class="icon-prev ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerPrevious")"><i class="icon-prev ew-icon"></i></a>
+	}
+</div>
+<!--current page number-->
+	<input class="form-control" type="text" name="@Config.TablePageNumber" value="@ULTIMO_INGRESO_List.Pager.CurrentPageNumber">
+<div class="input-group-append">
+<!--next page button-->
+	@if (ULTIMO_INGRESO_List.Pager.NextButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerNext")" href="@AppPath(ULTIMO_INGRESO_List.PageUrl)start=@ULTIMO_INGRESO_List.Pager.NextButton.Start"><i class="icon-next ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerNext")"><i class="icon-next ew-icon"></i></a>
+	}
+<!--last page button-->
+	@if (ULTIMO_INGRESO_List.Pager.LastButton.Enabled) {
+	<a class="btn btn-default" title="@Language.Phrase("PagerLast")" href="@AppPath(ULTIMO_INGRESO_List.PageUrl)start=@ULTIMO_INGRESO_List.Pager.LastButton.Start"><i class="icon-last ew-icon"></i></a>
+	} else {
+	<a class="btn btn-default disabled" title="@Language.Phrase("PagerLast")"><i class="icon-last ew-icon"></i></a>
+	}
+</div>
+</div>
+</div>
+<span>&nbsp;@Html.Raw(Language.Phrase("Of"))&nbsp;@ULTIMO_INGRESO_List.Pager.PageCount</span>
+<div class="clearfix"></div>
+</div>
+}
+@if (ULTIMO_INGRESO_List.Pager.RecordCount > 0) {
+	<div class="ew-pager ew-rec">
+		<span>@Html.Raw(Language.Phrase("Record"))&nbsp;@(ULTIMO_INGRESO_List.Pager.FromIndex)&nbsp;@Html.Raw(Language.Phrase("To"))&nbsp;@(ULTIMO_INGRESO_List.Pager.ToIndex)&nbsp;@Html.Raw(Language.Phrase("Of"))&nbsp;@(ULTIMO_INGRESO_List.Pager.RecordCount)</span>
+	</div>
+}
+			</form>
+		}
+		<div class="ew-list-other-options">
+		@ULTIMO_INGRESO_List.OtherOptions.RenderBody("bottom")
+		</div>
+		<div class="clearfix"></div>
+		</div>
+		}
+</div><!-- /.ew-grid -->
+}
+@if (ULTIMO_INGRESO_List.TotalRecords <= 0 && ULTIMO_INGRESO_List.CurrentAction == "") { // Show other options
+<div class="ew-list-other-options">
+@ULTIMO_INGRESO_List.OtherOptions.ForEach(opt => opt.ButtonClass = "").RenderBody()
+</div>
+<div class="clearfix"></div>
+}
+@ULTIMO_INGRESO_List.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+@if (!ULTIMO_INGRESO.IsExport()) {
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>
+}

@@ -1,0 +1,411 @@
+﻿<%@ Master Language="VB" CodeFile="PaginaMaestra.master.vb" Inherits="PaginaMaestra" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+   
+    
+    
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <table style="width: 1300px; vertical-align: top;" >
+            <tr>
+                <td td style="width: 200px; vertical-align: top;">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Logo01.jpg"  Width="190px" Height="300" />
+                    <hr  />
+                    <asp:Menu ID="Menu1" runat="server" BackColor="#E3EAEB" 
+                        DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                        ForeColor="#666666" StaticSubMenuIndent="10px" Width="100%">
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/HistoriasClinicas/RegEnfActivs.aspx" 
+                                Text="Actividades de Enfermeria" 
+                                Value="Actividades de Enfermeria" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/HistoriasClinicas/RegEnfActivs.aspx" Text="Actividades General" ToolTip="Oxigeno" Value="Actividades General"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HistoriasClinicas/Electrogardiogramas.aspx" Text="EKG-MAS" Value="EKG-MAS"></asp:MenuItem>
+                                 <asp:MenuItem Text="Oxigeno" Value="Oxigeno">
+                                    <asp:MenuItem NavigateUrl="~/HistoriasClinicas/Oxigeno/RegOxigeno.aspx" Text="Registro Oxigeno" Value="Registro Oxigeno"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HistoriasClinicas/Oxigeno/ReportOxigeno.aspx" Text="Reporte" Value="Verificar Oxigeno"></asp:MenuItem> 
+                               
+                                     <asp:MenuItem NavigateUrl="~/HistoriasClinicas/Oxigeno/EditarOxigeno.aspx" Text="Editar" Value="Editar"></asp:MenuItem>
+                               
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Varios/RotulosCamas.aspx" Text="Generar Rotulos Camas" Value="Generar Rotulos Camas"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Ingresos/Novedades.aspx" 
+                                Text="Novedades de Ingresos" Value="Novedades de Ingresos" Enabled="False" Selectable="False"></asp:MenuItem>
+                            <asp:MenuItem Selectable="False" Text="Auditoria" Value="Auditoria">
+                                <asp:MenuItem 
+                                    Text="Resumen Objeciones" Value="Resumen Objeciones">
+                                    <asp:MenuItem NavigateUrl="~/Auditoria/SegRadicacion.aspx" Text="X_Objecion" Value="X_Objecion"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Auditoria/SegRadicacionporfac.aspx" Text="X_Factura" Value="X_Factura"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Auditoria/SegGlosas.aspx" 
+                                    Text="Seguimiento Glosas por Entidad" Value="Seguimiento Glosas por Entidad">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Auditoria/SOAT/Soat.aspx" Text="SOAT" Value="SOAT"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Auditoria/Inter/IntercosultaEsp.aspx" Text="Interconsultas" Value="Interconsultas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Auditoria/Inter/TRIAGE.aspx" Text="Pacientes_Triage" Value="Pacientes_Triage"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem 
+                                Text="Cartera" Value="Cartera" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Cartera/ResumenCartera.aspx"  Text="Resumen Cartera - Objeciones" Value="Resumen Cartera - Objeciones">                                 </asp:MenuItem>
+                               
+                                <asp:MenuItem NavigateUrl="~/Cartera/Res014.aspx"  Text="Res014" Value="Res014"> </asp:MenuItem>
+                              
+							   <asp:MenuItem NavigateUrl="~/Indicadores/Resoluciones/Res025.aspx" 
+                                    Text="Resolución 025" Value="Resolución 025"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Cartera/GlosaInicial.aspx" Text="Glosas" 
+                                    Value="Glosas"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Varios/TrasladosSinConfirmar.aspx" 
+                                    Text="Relacionar Traslados" Value="Relacionar Traslados"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Selectable="False" Text="Consulta Externa" 
+                                Value="Consulta Externa">
+                                <asp:MenuItem NavigateUrl="~/ConsultaExterna/CitMedPacs.aspx" 
+                                    Text="Resumen Citas Médicas" Value="Resumen Citas Médicas"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem 
+                                Text="Cord_Urgencias" Value="Cord_Urgencias">
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Urgencias.aspx" Text="Indicadores de Urgencias" Value="Indicadores de Urgencias"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Triage/GenerarReporte.aspx" Text="Oportunidad Urgencias" Value="Oportunidad Urgencias"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Urgencias/Coord/Eps_Porcentaje.aspx" Text="%Eps" Value="%Eps"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Urgencias/Coord/Ruta_Respiratoria.aspx" Text="Ruta Respiratoria" Value="Ruta Respiratoria"></asp:MenuItem>
+                            </asp:MenuItem>
+
+      <asp:MenuItem  NavigateUrl="https://docs.google.com/forms/d/e/1FAIpQLScyvr7eKkYKsLG3a2B2V1GoyzJO0Lpi388v6ErcVkbFO_BXhA/viewform" 
+                                Text="Notificación Neurologica" Value="Notificación Neurologica" >
+            
+                            </asp:MenuItem>
+
+
+
+
+                            <asp:MenuItem Text="Especialistas" Value="Especialistas">
+                                <asp:MenuItem NavigateUrl="~/Especialistas/Gastro/Solicitud_Procedimientos.aspx" Text="Gastroenterologia" Value="Gastroenterologia"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem 
+                                Text="Facturación" Value="Facturación" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Facturacion/PypEvento.aspx" 
+                                    Text="Archivo Plano Medimas" Value="Archivo Plano Cafesalud">
+                                </asp:MenuItem>
+								
+                                <asp:MenuItem NavigateUrl="~/Facturacion/Certificados.aspx" Text="Cert_Liquidación" Value="Cert_Liquidación"></asp:MenuItem>
+                                 
+								<asp:MenuItem NavigateUrl="~/Facturacion/Salas/Cirugia.aspx" Text="Cirugias dia" Value="Cirugias dia"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/Facturacion/CxC.aspx" Text="CxC" Value="CxC"></asp:MenuItem>
+                             <asp:MenuItem NavigateUrl="~/Facturacion/PoblaciónExt.aspx" Text="Extranjeros" Value="Extranjeros"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/IngFactsAnuBlq.aspx" Text="Facturas o Ingresos Anulados o Bloqueados" 
+                                    Value="Facturas o Ingresos Anulados o Bloqueado"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/FacturasSaldo.aspx" Text="Facturas Saldo" Value="Facturas Saldo"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/Facturacion/38925.aspx" Text="OBSERVACION II NIVEL" Value="OBSERVACION II NIVEL"></asp:MenuItem>
+								 <asp:MenuItem NavigateUrl="~/Facturacion/Oxigeno/ReportOxigeno.aspx" Text="Oxigeno Reporte" Value="Oxigeno"></asp:MenuItem>
+								 <asp:MenuItem NavigateUrl="~/Facturacion/Oxigeno/Oxigeno.aspx" Text="Oxigeno Sin Cerrar" Value="Oxigeno"></asp:MenuItem>
+								 <asp:MenuItem NavigateUrl="~/Facturacion/Oxigeno/RegEnfActivs.aspx" Text="Oxigeno Enfermeria" Value="Oxigeno"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/ResumenFacturacion.aspx" 
+                                    Text="Resumen Facturación" Value="Resumen Facturacion"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/ResumenCenCos.aspx" 
+                                    Text="Resumen Centros de Costo" Value="Resumen Centros de Costo">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/Servicios.aspx" Text="Servicios" Value="Servicios"></asp:MenuItem>
+                               
+                                <asp:MenuItem NavigateUrl="~/Facturacion/Proceso.aspx" Text="Traza" Value="Traza"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Selectable="False" Text="Farmacia" Value="Farmacia">
+                                <asp:MenuItem NavigateUrl="~/Farmacia/Medica_control.aspx" Text="Antibioticos de Control" Value="Antibioticos de Control"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/ConsultaNotasMedicas.aspx" Text="Consultar Notas Medicas" Value="Consultar Notas Medicas"> </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/ConsProm_Kardex.aspx" Text="Kardex" Value="Kardex"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/MedicaSolicita.aspx" Text="Medicamentos Solicitados" Value="Medicamentos Solicitados"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/OrdenesServicioRegente.aspx" Text="Orden Servicio Regentes" Value="Orden Servicio Regentes"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/QX_20.aspx" Text="Qx Grupo 20+" Value="Qx Grupo 20+"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/SuminPacienteAlmacen.aspx" Text="Suministro a Paciente" Value="Suministro a Paciente"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/Farmacia\Controlfarmaco/Medica_control.aspx" Text="Seguimiento Farmaco" Value="Seguimiento Farmaco"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/OrdenesServicio.aspx" Text="Traza Ordenes de Servicio" Value="Traza Ordenes de Servicio">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Gerencia" Value="Gerencia">
+                                <asp:MenuItem NavigateUrl="~/Gerencia/FacturasySaldo.aspx" Text="PendienteFacturar" Value="PendienteFacturar"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Selectable="False" Text="Tecnologia de la Información" Value="0" >
+                                <asp:MenuItem NavigateUrl="~/Update/CambiarDocumento.aspx" 
+                                    Text="Actualizar Datos básicos Pacientes" 
+                                    Value="Actualizar Datos básicos Pacientes"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Mantenimiento/Asignacion/Asignacion.aspx" Text="Asignar Solicitudes" Value="Asignar Solicitudes"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Sistemas/Bitacora_PMP/PaginaBase.aspx" 
+                                    Text="Control de Equipos" Value="Control de Equipos"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Mantenimiento/Asignacion/Job_Plan.aspx" Text="Crear Soportes" Value="Crear Soportes"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Update/DescoEpicri.aspx" 
+                                    Text="Desconfirmar Epicrisis" Value="Desconfirmar Epicrisis"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Mantenimiento/Actividad/TempVoIPED.aspx" Text="Gestión de Extensiones" Value="Gestión de Extensiones"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/UserAdmin/GestionUsuarios.aspx" 
+                                    Text="Gestión de Usuarios" Value="Gestión de Usuarios"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Update/HomologarHCs.aspx" 
+                                    Text="Homologar Historias Clinicas" Value="Homologar Historias Clinicas">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Mantenimiento/Actividad/Actividad.aspx" Text="Responder Solicitudes" Value="Responder Solicitudes"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Mantenimiento/Actividad/Tablero.aspx" Text="Tablero" Value="Tablero"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem 
+                                Text="Historias Clinicas" Value="Historias Clinicas" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Varios/UESI_Inf_QX.aspx" Text="Actividades Quirúrgicas" Value="Nuevo elemento"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HistoriasClinicas/Auditoria/MedicosFolios.aspx" Text="Auditoria por Profesional" Value="Registro por Profesional"> </asp:MenuItem>
+                     <asp:MenuItem NavigateUrl="~/HistoriasClinicas/Bloqueo/PACIENTESUCI.ASPX" Text="Pacientes UCI" Value="Pacientes UCI"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/HistoriasClinicas/FORMATO_VALORACION_IPS_EXTERNA.pdf" Text="FORMATO_VALORACION_IPS_EXTERNA" Value="FORMATO_VALORACION_IPS_EXTERNA"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/RepCirugias.aspx" Text="Reporte de Cirugias" Value="Reporte de Cirugias"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/Quirurgico.aspx" Text="Resumen Quirúrgico" Value="Resumen Quirúrgico"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/HistoriasClinicas/SolTerapia.aspx" Text="Solitud Terapias" Value="Solitud Terapias"></asp:MenuItem>
+
+                            </asp:MenuItem>
+							
+                            <asp:MenuItem 
+							  Text="IAMII" Value="IAMII" Selectable="False">
+                              
+                                <asp:MenuItem NavigateUrl="~/IAMII/Puerperio/Puerperio.aspx" Text="HC Puerperio" Value="HC Puerperio"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/IAMII/Puerperio/Perinatal.aspx" Text="HC Perinatal" Value="HC Perinatal"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/IAMII/GRAVINDEX/GRAVINDEX.aspx" Text="GRAVINDEX" Value="GRAVINDEX"></asp:MenuItem>
+						<asp:MenuItem NavigateUrl="~/IAMII/TSH/TSH.aspx" Text="TSH" Value="TSH"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Selectable="False" Text="Indicadores" 
+                                Value="Indicadores" NavigateUrl="~/Indicadores/Proyecto/CargarIndicadores.aspx">
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Proyecto/Admins/AsocIndiUsers.aspx" 
+                                    Text="Indicadores y Usuarios" Value="Indicadores y Usuarios">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Proyecto/Admins/EditDatosIndicadores.aspx" 
+                                    Text="Editar Datos Indicadores" Value="Editar Datos Indicadores">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Proyecto/Indicadorprueb.aspx" Text="Reporte Indicadores" Value="Reporte Indicadores"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Proyecto/Formula/Formula.aspx" Text="Editar Formula" Value="Editar Formula"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/Proyecto/CargarIndicadores.aspx" Text="Cargar Indicadores" Value="Cargar Indicadores"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem 
+                                Text="Informes" Value="Informes" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Tableros/ProcedimientosDia.aspx" 
+                                    Text="Diagnósticos Consulta Externa" Value="Diagnosticos Consulta Externa">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/ExamenesLaboratorio.aspx" 
+                                    Text="Laboratorio Clínico" Value="Laboratorio Clínico"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/MorbilidadAAT.aspx" 
+                                    Text="Morbilidad y Mortalidad AAT" Value="Morbilidad y Mortalidad AAT">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/ConsultaExterna/GenerarReporte.aspx" 
+                                    Text="Inf Consulta Externa Municipios (Activs)" Value="Consulta Externa">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Indicadores/ConsultaExterna/ResumenPorEspecialidades.aspx" 
+                                    Text="Inf Consulta Externa Municipios (Especs)" 
+                                    Value="Inf Consulta Externa Municipios (Especs)"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Facturacion/RadicacionCuentas.aspx" 
+                                    Text="Radicación de Cuentas" Value="Radicación de Cuentas"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Ing Hospitalaria" Value="0" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Support/Asignacion/Asignar.aspx" Text="Solicitudes" Value="Solicitudes"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Support/Trabajo.aspx" Text="Gestionar" Value="Gestionar"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Support/Biomedicos/PaginaBase.aspx" Text="Equipos" Value="Equipos"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Internacion" Value="Internacion">
+                                <asp:MenuItem NavigateUrl="~/Hospitalizacion/Tablero_Internacion.aspx" Text="Censo" Value="Censo"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Farmacia/OrdenServicebloque/OServiceBloque.aspx" Text="Control_Medicamentos" Value="Control_Medicamentos"></asp:MenuItem>
+						<asp:MenuItem NavigateUrl="~/Hospitalizacion/Censo Camas.aspx" Text="Reporte Camas" Value="Reporte Camas"></asp:MenuItem>
+                                                          
+						   </asp:MenuItem>
+
+ <asp:MenuItem Selectable="False" Text="Laboratorio" 
+                                Value="Laboratorio">
+                                <asp:MenuItem NavigateUrl="~/Laboratorio/OrdenServicebloque/OServiceBloqueLAB.aspx"  
+                                    Text="Seguimiento Laboratorio" Value="Seguimiento Laboratorio"></asp:MenuItem>
+                            
+				 <asp:MenuItem NavigateUrl="~/Laboratorio/Ordenprueba/OServiceBloqueLAB.aspx"  Text="Seguimiento Laboratorio v2" Value="Seguimiento Laboratorio v2"></asp:MenuItem>
+                           
+</asp:MenuItem>
+                            <asp:MenuItem Text="Manuales" Value="Manuales">
+                                <asp:MenuItem NavigateUrl="http://pach/Mantenimiento/Manual.pdf" Text="Crear Soportes" Value="Crear Soportes"></asp:MenuItem>
+								 <asp:MenuItem NavigateUrl="~/Manuales/DIETAS/DIETASMan.aspx" Text="Dietas Solicitar" Value="Dietas Solicitar"></asp:MenuItem>
+								  <asp:MenuItem NavigateUrl="~/Manuales/Mipres/MipresMan.aspx" Text="Mipres" Value="Mipres"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Manuales/NAS.pdf" Text="NAS" Value="NAS"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Manuales/LibreOffice_Calc.pdf" Text="LibreOffice_Calculo" Value="LibreOffice_Calculo"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Manuales/Clinicas/CHeridas.aspx" Text="Clinica de Heridas" Value="Clinica de Heridas"></asp:MenuItem>
+                                <asp:MenuItem Text="Oxigeno" Value="Oxigeno">
+                                    <asp:MenuItem NavigateUrl="~/Manuales/Oxigeno/OxigenoMan.aspx" Text="Registrar" Value="Registrar"></asp:MenuItem>
+                                    <asp:MenuItem Text="Solicitar Oxigeno" Value="Solicitar Oxigeno" NavigateUrl="~/Manuales/Sol_Oxigeno/OxigenoMan.aspx"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Manuales/Fac_Oxigeno/OxigenoMan.aspx" Text="Facturar" Value="Facturar"></asp:MenuItem>
+									
+                                </asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/Manuales/Medilab/Medilab.aspx" Text="Ingreso y uso Medilab" Value="Ingreso y uso Medilab"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/Manuales/Neonatal/Neonatal.aspx" Text="Ingreso para Codigo Azul Neonatal" Value="Ingreso para  Codigo Azul Neonatal"></asp:MenuItem>
+                            </asp:MenuItem>
+
+							 <asp:MenuItem Text="Preauditoria" Value="Preauditoria">
+							 <asp:MenuItem NavigateUrl="~/Preauditoria/PypEvento.aspx" Text="Facturas" Value="Facturas"></asp:MenuItem>
+							 <asp:MenuItem NavigateUrl="~/Preauditoria/Medicamentos/Traza.aspx" Text="MEDICAMENTOS" Value="MEDICAMENTOS"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Prest_Servicios" Value="Prest_Servicios">
+                                <asp:MenuItem NavigateUrl="~/PrestService/O2_Ko.aspx" Text="O2_Ordenes erroneas" Value="O2_Ordenes erroneas"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/PrestService/Certificados.aspx" Text="Check" Value="Check"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/PrestService/RegOxigeno.aspx" Text="O2_Registro" Value="O2_Registro"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Auditoria/Inter/TRIAGE.aspx" Text="Pacientes_Triage" Value="Pacientes_Triage"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Selectable="False" Text="RefyCont" Value="RefyCont">
+                                <asp:MenuItem NavigateUrl="~/RefyContra/Solicita_Servicio.aspx" Text="Clinica de Heridas" Value="Clinica de Heridas"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/RefyContra/SolComfamiliar.aspx" Text="Comfamiliar" Value="Comfamiliar"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/RefyContra/Eps_Porcentaje.aspx" Text="Ingresos Resumen" Value="Ingresos Resumen"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/RefyContra/Solicita_pac_medi_eps.aspx" Text="Medi+Paci+Eps" Value="Medi+Paci+Eps"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/RefyContra/SolMedisalud.aspx" Text="Medisalud" Value="Medisalud"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/RefyContra/SolPqx.aspx" Text="Solicitud QX" Value="Solicitud QX"></asp:MenuItem>
+								<asp:MenuItem NavigateUrl="~/RefyContra/Cambio/CambiarDocumento.aspx" Text="NACIDO VIVO" Value="NACIDO VIVO"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Selectable="False" Text="Salas de Cirugia" 
+                                Value="Salas de Cirugia">
+                                <asp:MenuItem NavigateUrl="~/Cirugia/ProgDgh.aspx" 
+                                    Text="Seguimiento Diario de Cirugias" Value="Seguimiento de Cirugias">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Cirugia/Inter/IntercosultaEsp.aspx" Text="RtaIntercosulta" Value="RtaIntercosulta"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Cirugia/SolPqx.aspx" Text="SolicitudesQX" Value="SolicitudesQX"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Cirugia/Material.aspx" Text="Material de Osteosíntesis" Value="Material de Osteosíntesis"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Facturacion/Quirurgico.aspx" 
+                                Text="Sede SantaRosa" Value="Resumen Quirúrgico" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Varios/PyP.aspx" Text="Formato de Informes" 
+                                    Value="Formato 4505 PyP"></asp:MenuItem>
+                                                                    <asp:MenuItem NavigateUrl="~/Indicadores/Resoluciones/Res025.aspx" 
+                                    Text="Resolución 025" Value="Resolución 025">
+                                    </asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="SIAU" Value="SIAU">
+                                <asp:MenuItem NavigateUrl="~/SIAU/SolPqxCE.aspx" Text="Solicitud_QX" Value="Solicitud_QX"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="SubCientifica" Value="SubCientifica">
+<asp:MenuItem NavigateUrl="~/Subcientifica/AYUDANTIA/ayudantia.aspx" Text="Ayudantias" Value="Ayudantias"></asp:MenuItem>
+                                                       
+							   <asp:MenuItem NavigateUrl="~/Cientifica/Info_Municipios.aspx" Text="Info_Municipios" Value="Info_Municipios"></asp:MenuItem>
+								    <asp:MenuItem NavigateUrl="~/Subcientifica\AuditoriaMed/MedicosFolios.aspx" Text="MedicosFolios" Value="MedicosFolios"></asp:MenuItem>
+                            
+							</asp:MenuItem>
+							
+							
+							
+							
+                            <asp:MenuItem Text="Talento Humano" Value="Talento Humano">
+                                <asp:MenuItem Text="GestiondePersonal" Value="GestiondePersonal">
+                                    <asp:MenuItem NavigateUrl="~/Inducción/Admin/Empleadocrear.aspx" Text="Gestión Personal" Value="Gestión Personal"></asp:MenuItem>
+                                    <asp:MenuItem Text="Plan de Inducción" Value="Plan de Inducción">
+                                        <asp:MenuItem NavigateUrl="~/Inducción/Admin/Crear.aspx" Text="Crear" Value="Crear"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Inducción/Admin/Modificar_Plan.aspx" Text="Modificar" Value="Modificar"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Inducción/Admin/DelPLan.aspx" Text="Eliminar" Value="Eliminar"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+							
+							
+
+<asp:MenuItem Text="Torre de Control" Value="Torre de Control">
+
+<asp:MenuItem NavigateUrl="~/Facturacion/Certificados.aspx" Text="Cert_Liquidación" Value="Cert_Liquidación"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Eps_Porcentaje.aspx" Text="Porcentaje Pacientes" Value="Porcentaje Pacientes"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/Laboratorio/Ordenprueba/OServiceBloqueLAB.aspx"  Text="Seguimiento Laboratorio" Value="Seguimiento Laboratorio v2"></asp:MenuItem>
+<asp:MenuItem Text="Indicadores" Value="Indicadores" Selectable="False">
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Indicadores/Urgencias.aspx" Text="Urgencias" Value="Urgencias"></asp:MenuItem> 
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Indicadores/GIROCAMA.aspx" Text="Giro Cama" Value="Giro Cama"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Indicadores/ATENCIONURGENCIAS.aspx" Text="Tiempo Estancia en Urgencias" Value="Tiempo Estancia en Urgencias"></asp:MenuItem> 
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Indicadores/TRIAGE.aspx" Text="Tiempos Triage - Ultimo folio" Value="Tiempos Triage - Ultimo folio"></asp:MenuItem> 
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Indicadores/Estancia.aspx" Text="Estancia Fast track y salas ERA y EDA" Value="Estancia Fast track y salas ERA y EDA"></asp:MenuItem> 
+</asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Seguimiento.aspx" Text="Seguimiento Ingresos" Value="Seguimiento Ingresos"></asp:MenuItem>
+
+<asp:MenuItem NavigateUrl="~/Hospitalizacion/Tablero_Internacion.aspx" Text="Internación" Value="Internación"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/TorreDeControl/Tablero_Internacion.aspx" Text="Camas Libres" Value="Camas Libres"></asp:MenuItem>
+<asp:MenuItem Text="Urgencias" Value="Urgencias" Selectable="False">
+<asp:MenuItem NavigateUrl="~/Urgencias/Tableros/Estancia.aspx" Text="Ocupaciòn" Value="Ocupaciòn"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/Urgencias/Tableros/Tablero.aspx" Text="Tablero Urgencias" Value="Tablero Urgencias"></asp:MenuItem>
+<asp:MenuItem NavigateUrl="~/Urgencias/Triage/Control_Triage.aspx" Text="Triage_Control" Value="Triage_Control"></asp:MenuItem>  </asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Selectable="False" Text="Crear Soportes" Value="Soporte">
+                                <asp:MenuItem Selectable="False" Text="Ing Hospitalaria" Value="Ing Hospitalaria">
+                                    <asp:MenuItem Text="Solicitar" Value="Solicitar">
+                                        <asp:MenuItem NavigateUrl="~/Support/Job.aspx" Text="Equipos Biomedicos" Value="Equipos Biomedicos"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Support/Job_Infra.aspx" Text="Infraestructura" Value="Infraestructura"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Support/Solicitudes.aspx" Text="Ver Solicitudes" Value="Ver Solicitudes"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Support/Lideres.aspx" Text="Lider de Area" Value="Lider de Area"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Selectable="False" Text="Tecnologia de la Información" Value="Gestión Info">
+                                    <asp:MenuItem Text="Solicitar" Value="Solicitar" Selectable="False">
+                                        <asp:MenuItem NavigateUrl="~/Mantenimiento/Job_PC.aspx" Text="Equipos de Computo" Value="Equipos de Computo"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/Mantenimiento/Job_Info.aspx" Text="Información" Value="Información"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Mantenimiento/Solicitudes.aspx" Text="Eventos Solicitados" Value="Eventos Solicitados"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Mantenimiento/Lideres.aspx" Text="Lider de Area" Value="Lider de Area"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="http://pach/Mantenimiento/Manual.pdf" Text="Como Solicitar?" Value="Como Solicitar?"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Text="Urgencias" Value="Urgencias" Selectable="False">
+                                <asp:MenuItem NavigateUrl="~/Urgencias/Tableros/Estancia.aspx" Text="Ocupaciòn" Value="Ocupaciòn"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Urgencias/Tableros/Tablero.aspx" Text="Tablero Urgencias" Value="Tablero Urgencias"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Urgencias/Triage/Control_Triage.aspx" Text="Triage_Control" Value="Triage_Control"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem Selectable="False" Text="Utilidades DGH" Value="Utilidades DGH">
+                                <asp:MenuItem NavigateUrl="~/Varios/DesbloquearUsuario.aspx" 
+                                    Text="Desbloquear Usuario" Value="Desbloquear Usuario"></asp:MenuItem>
+                            </asp:MenuItem>
+
+                            <asp:MenuItem NavigateUrl="~/Varios/hrdpospopuli.aspx" Text="BUSQUEDA POR CUPS" Value="BUSQUEDA POR CUPS"></asp:MenuItem>
+
+                            <asp:MenuItem NavigateUrl="~/Varios/TempVoIP.aspx" Text="Extensiones" Value="Extensiones" Target="New"></asp:MenuItem>
+
+                        </Items>
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                    </asp:Menu>
+                    
+                    <br />
+                    <asp:Login ID="Login1" runat="server" BorderColor="#CCCCCC" BorderStyle="Solid" 
+                        BorderWidth="1px" DestinationPageUrl="~/Fosyga.aspx" 
+                        style="font-size: 8pt; font-family: tahoma">
+                        <TitleTextStyle BackColor="#74C0FC" Font-Bold="True" ForeColor="White" />
+                    </asp:Login>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/Fosyga.aspx" 
+                        style="font-family: Tahoma; font-size: 8pt" />
+                    <br />
+                    &nbsp;<asp:Image ID="Image2" runat="server" ImageUrl="~/Images/mariposa.jpg" />
+                </td>
+                <td style="border: 1px solid #000000; width: 1100px; vertical-align: top;">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" 
+                    style="border-top-style: solid; border-top-width: 1px; border-top-color: #C0C0C0; font-family: tahoma; font-size: 8pt; color: #999999; text-align: center;">
+                    © 2022 E.S.E. Hospital Regional de Duitama - DAAJ. </td>
+            </tr>
+        </table>
+        
+        
+   
+    </form>
+    
+        
+</body>
+</html>

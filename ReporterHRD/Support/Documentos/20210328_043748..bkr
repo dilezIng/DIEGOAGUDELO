@@ -1,0 +1,131 @@
+Version 2.2
+	 file_start 	
+brige
+D:\ReporterHRD\ (*.aspx)
+1
+*.aspx
+
+0
+D:\ReporterHRD\
+1
+1
+D:\ReporterHRD\
+1
+1
+backup
+0
+1
+D:\ReporterHRD\
+1
+	 file_start 	
+brige
+D:\ReporterHRD\ (*.aspx.vb)
+1
+*.aspx.vb
+
+0
+D:\ReporterHRD\
+1
+1
+D:\ReporterHRD\
+1
+1
+backup
+0
+1
+D:\ReporterHRD\
+1
+	 file_start 	
+SUPORT
+D:\ReporterHRD\Mantenimiento\ (*.aspx.vb)
+1
+*.aspx.vb
+
+0
+D:\ReporterHRD\Mantenimiento\
+1
+1
+D:\ReporterHRD\Mantenimiento\
+1
+1
+backup
+0
+1
+D:\ReporterHRD\Mantenimiento\
+1
+	 file_start 	
+SUPORT
+D:\ReporterHRD\Support\ (*.aspx)
+1
+*.aspx
+
+0
+D:\ReporterHRD\Support\
+1
+0
+D:\RESULTADO\SUPPORT\
+1
+1
+backup
+0
+1
+D:\ReporterHRD\Support\
+1
+	 file_start 	
+user
+D:\ReporterHRD\ (*.aspx, *.aspx.vb)
+1
+*.aspx, *.aspx.vb
+
+0
+D:\ReporterHRD\
+1
+1
+D:\ReporterHRD\
+1
+1
+backup
+0
+1
+D:\ReporterHRD\
+1
+
+	 begin_group_backup 	
+	 group_start 	
+A Sample Replace Group
+Right-click me and choose "Advanced Edit"
+<--- That text will be replaced with this text
+These replacements all apply to "Sample Replace Group"...
+...and all the files associated with it
+For an example of a File Set, open "Sample.bkr"
+(choose Open from the File menu)
+
+
+	 group_start 	
+brige
+Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DbBridge.mdf;Integrated Security=True;User Instance=True;
+Server=pach\SQLEXPRESS;Database=DbBridge;User ID=sa;Password=Hrd2021Gi
+
+
+	 group_start 	
+New Group
+
+
+	 group_start 	
+Programming Replace Group
+
+
+	 group_start 	
+SUPORT
+Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DBSUPPORT.mdf;Integrated Security=True;User Instance=True;
+Server=pach\SQLEXPRESS;Database=DBSUPPORT;User ID=sa;Password=Hrd2021Gi
+
+
+
+
+	 group_start 	
+user
+Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\ASPNETDB.MDF;Integrated Security=True;User Instance=True
+Server=pach\SQLEXPRESS;Database=ASPNETDB;User ID=sa;Password=Hrd2021Gi
+
+

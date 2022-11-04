@@ -1,0 +1,470 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	INNCSUMPA_Delete.Page_Render();
+
+	// Check action result
+	if (INNCSUMPA_Delete.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "delete";
+var fINNCSUMPAdelete = currentForm = new ew.Form("fINNCSUMPAdelete", "delete");
+
+// Form_CustomValidate event
+fINNCSUMPAdelete.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fINNCSUMPAdelete.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+fINNCSUMPAdelete.lists["x_ISCSUMGENPEN"] = @Html.Raw(INNCSUMPA_Delete.ISCSUMGENPEN.Lookup.ToClientList());
+fINNCSUMPAdelete.lists["x_ISCSUMGENPEN"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Delete.ISCSUMGENPEN.Options(false))); // DN
+fINNCSUMPAdelete.lists["x_ISCINDIDESA"] = @Html.Raw(INNCSUMPA_Delete.ISCINDIDESA.Lookup.ToClientList());
+fINNCSUMPAdelete.lists["x_ISCINDIDESA"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Delete.ISCINDIDESA.Options(false))); // DN
+fINNCSUMPAdelete.lists["x_INNCCONFIR"] = @Html.Raw(INNCSUMPA_Delete.INNCCONFIR.Lookup.ToClientList());
+fINNCSUMPAdelete.lists["x_INNCCONFIR"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Delete.INNCCONFIR.Options(false))); // DN
+fINNCSUMPAdelete.lists["x_ISCINTERCOMPEN"] = @Html.Raw(INNCSUMPA_Delete.ISCINTERCOMPEN.Lookup.ToClientList());
+fINNCSUMPAdelete.lists["x_ISCINTERCOMPEN"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Delete.ISCINTERCOMPEN.Options(false))); // DN
+
+// Form object for search
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+@INNCSUMPA_Delete.ShowPageHeader()
+@INNCSUMPA_Delete.ShowMessages()
+<form name="fINNCSUMPAdelete" id="fINNCSUMPAdelete" class="form-inline ew-form ew-delete-form" action="@AppPath(CurrentPageName())" method="post">
+@if (INNCSUMPA_Delete.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<input type="hidden" name="action" id="action" value="delete">
+@foreach (string key in INNCSUMPA_Delete.RecordKeys) {
+<input type="hidden" name="key_m" value="@key">
+}
+<div class="card ew-card ew-grid">
+<div class="@(IsResponsiveLayout() ? "table-responsive " : "")card-body ew-grid-middle-panel">
+<table class="table ew-table">
+	<thead>
+	<tr class="ew-table-header">
+@if (INNCSUMPA.OID.Visible) { // OID (begin)
+		<th class="@Html.Raw(INNCSUMPA.OID.HeaderCellClass)"><span id="elh_INNCSUMPA_OID" class="INNCSUMPA_OID">@Html.Raw(INNCSUMPA.OID.Caption)</span></th>
+} @* OID.Visible (end) *@
+@if (INNCSUMPA.ADNINGRESO.Visible) { // ADNINGRESO (begin)
+		<th class="@Html.Raw(INNCSUMPA.ADNINGRESO.HeaderCellClass)"><span id="elh_INNCSUMPA_ADNINGRESO" class="INNCSUMPA_ADNINGRESO">@Html.Raw(INNCSUMPA.ADNINGRESO.Caption)</span></th>
+} @* ADNINGRESO.Visible (end) *@
+@if (INNCSUMPA.SLNORDSER.Visible) { // SLNORDSER (begin)
+		<th class="@Html.Raw(INNCSUMPA.SLNORDSER.HeaderCellClass)"><span id="elh_INNCSUMPA_SLNORDSER" class="INNCSUMPA_SLNORDSER">@Html.Raw(INNCSUMPA.SLNORDSER.Caption)</span></th>
+} @* SLNORDSER.Visible (end) *@
+@if (INNCSUMPA.ISCESTPRO.Visible) { // ISCESTPRO (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCESTPRO.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCESTPRO" class="INNCSUMPA_ISCESTPRO">@Html.Raw(INNCSUMPA.ISCESTPRO.Caption)</span></th>
+} @* ISCESTPRO.Visible (end) *@
+@if (INNCSUMPA.GEENMedico.Visible) { // GEENMedico (begin)
+		<th class="@Html.Raw(INNCSUMPA.GEENMedico.HeaderCellClass)"><span id="elh_INNCSUMPA_GEENMedico" class="INNCSUMPA_GEENMedico">@Html.Raw(INNCSUMPA.GEENMedico.Caption)</span></th>
+} @* GEENMedico.Visible (end) *@
+@if (INNCSUMPA.INNALMACE.Visible) { // INNALMACE (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNALMACE.HeaderCellClass)"><span id="elh_INNCSUMPA_INNALMACE" class="INNCSUMPA_INNALMACE">@Html.Raw(INNCSUMPA.INNALMACE.Caption)</span></th>
+} @* INNALMACE.Visible (end) *@
+@if (INNCSUMPA.GENARESER.Visible) { // GENARESER (begin)
+		<th class="@Html.Raw(INNCSUMPA.GENARESER.HeaderCellClass)"><span id="elh_INNCSUMPA_GENARESER" class="INNCSUMPA_GENARESER">@Html.Raw(INNCSUMPA.GENARESER.Caption)</span></th>
+} @* GENARESER.Visible (end) *@
+@if (INNCSUMPA.GENARESER1.Visible) { // GENARESER1 (begin)
+		<th class="@Html.Raw(INNCSUMPA.GENARESER1.HeaderCellClass)"><span id="elh_INNCSUMPA_GENARESER1" class="INNCSUMPA_GENARESER1">@Html.Raw(INNCSUMPA.GENARESER1.Caption)</span></th>
+} @* GENARESER1.Visible (end) *@
+@if (INNCSUMPA.ISCSUMIORIGEN.Visible) { // ISCSUMIORIGEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCSUMIORIGEN.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCSUMIORIGEN" class="INNCSUMPA_ISCSUMIORIGEN">@Html.Raw(INNCSUMPA.ISCSUMIORIGEN.Caption)</span></th>
+} @* ISCSUMIORIGEN.Visible (end) *@
+@if (INNCSUMPA.ISCSUMIPENDI.Visible) { // ISCSUMIPENDI (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCSUMIPENDI.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCSUMIPENDI" class="INNCSUMPA_ISCSUMIPENDI">@Html.Raw(INNCSUMPA.ISCSUMIPENDI.Caption)</span></th>
+} @* ISCSUMIPENDI.Visible (end) *@
+@if (INNCSUMPA.INNORDDESC.Visible) { // INNORDDESC (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNORDDESC.HeaderCellClass)"><span id="elh_INNCSUMPA_INNORDDESC" class="INNCSUMPA_INNORDDESC">@Html.Raw(INNCSUMPA.INNORDDESC.Caption)</span></th>
+} @* INNORDDESC.Visible (end) *@
+@if (INNCSUMPA.ISCSUMGENPEN.Visible) { // ISCSUMGENPEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCSUMGENPEN.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCSUMGENPEN" class="INNCSUMPA_ISCSUMGENPEN">@Html.Raw(INNCSUMPA.ISCSUMGENPEN.Caption)</span></th>
+} @* ISCSUMGENPEN.Visible (end) *@
+@if (INNCSUMPA.ISCVRBASINC.Visible) { // ISCVRBASINC (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCVRBASINC.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCVRBASINC" class="INNCSUMPA_ISCVRBASINC">@Html.Raw(INNCSUMPA.ISCVRBASINC.Caption)</span></th>
+} @* ISCVRBASINC.Visible (end) *@
+@if (INNCSUMPA.ISCPORINCRE.Visible) { // ISCPORINCRE (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCPORINCRE.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCPORINCRE" class="INNCSUMPA_ISCPORINCRE">@Html.Raw(INNCSUMPA.ISCPORINCRE.Caption)</span></th>
+} @* ISCPORINCRE.Visible (end) *@
+@if (INNCSUMPA.ISCPORINCRE1.Visible) { // ISCPORINCRE1 (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCPORINCRE1.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCPORINCRE1" class="INNCSUMPA_ISCPORINCRE1">@Html.Raw(INNCSUMPA.ISCPORINCRE1.Caption)</span></th>
+} @* ISCPORINCRE1.Visible (end) *@
+@if (INNCSUMPA.ISCVALINCRE.Visible) { // ISCVALINCRE (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCVALINCRE.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCVALINCRE" class="INNCSUMPA_ISCVALINCRE">@Html.Raw(INNCSUMPA.ISCVALINCRE.Caption)</span></th>
+} @* ISCVALINCRE.Visible (end) *@
+@if (INNCSUMPA.ISCVALINCRE1.Visible) { // ISCVALINCRE1 (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCVALINCRE1.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCVALINCRE1" class="INNCSUMPA_ISCVALINCRE1">@Html.Raw(INNCSUMPA.ISCVALINCRE1.Caption)</span></th>
+} @* ISCVALINCRE1.Visible (end) *@
+@if (INNCSUMPA.ISCOIDORIHCRE.Visible) { // ISCOIDORIHCRE (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCOIDORIHCRE.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCOIDORIHCRE" class="INNCSUMPA_ISCOIDORIHCRE">@Html.Raw(INNCSUMPA.ISCOIDORIHCRE.Caption)</span></th>
+} @* ISCOIDORIHCRE.Visible (end) *@
+@if (INNCSUMPA.ISCTIPSOLDIS.Visible) { // ISCTIPSOLDIS (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCTIPSOLDIS.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCTIPSOLDIS" class="INNCSUMPA_ISCTIPSOLDIS">@Html.Raw(INNCSUMPA.ISCTIPSOLDIS.Caption)</span></th>
+} @* ISCTIPSOLDIS.Visible (end) *@
+@if (INNCSUMPA.INNDISFORREC.Visible) { // INNDISFORREC (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNDISFORREC.HeaderCellClass)"><span id="elh_INNCSUMPA_INNDISFORREC" class="INNCSUMPA_INNDISFORREC">@Html.Raw(INNCSUMPA.INNDISFORREC.Caption)</span></th>
+} @* INNDISFORREC.Visible (end) *@
+@if (INNCSUMPA.INNPENDICAB.Visible) { // INNPENDICAB (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNPENDICAB.HeaderCellClass)"><span id="elh_INNCSUMPA_INNPENDICAB" class="INNCSUMPA_INNPENDICAB">@Html.Raw(INNCSUMPA.INNPENDICAB.Caption)</span></th>
+} @* INNPENDICAB.Visible (end) *@
+@if (INNCSUMPA.ISCINDIDESA.Visible) { // ISCINDIDESA (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCINDIDESA.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCINDIDESA" class="INNCSUMPA_ISCINDIDESA">@Html.Raw(INNCSUMPA.ISCINDIDESA.Caption)</span></th>
+} @* ISCINDIDESA.Visible (end) *@
+@if (INNCSUMPA.ISCJUSTIFICA.Visible) { // ISCJUSTIFICA (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCJUSTIFICA.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCJUSTIFICA" class="INNCSUMPA_ISCJUSTIFICA">@Html.Raw(INNCSUMPA.ISCJUSTIFICA.Caption)</span></th>
+} @* ISCJUSTIFICA.Visible (end) *@
+@if (INNCSUMPA.ISCFECORIGEN.Visible) { // ISCFECORIGEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCFECORIGEN.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCFECORIGEN" class="INNCSUMPA_ISCFECORIGEN">@Html.Raw(INNCSUMPA.ISCFECORIGEN.Caption)</span></th>
+} @* ISCFECORIGEN.Visible (end) *@
+@if (INNCSUMPA.ISCGFMIDFOR.Visible) { // ISCGFMIDFOR (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCGFMIDFOR.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCGFMIDFOR" class="INNCSUMPA_ISCGFMIDFOR">@Html.Raw(INNCSUMPA.ISCGFMIDFOR.Caption)</span></th>
+} @* ISCGFMIDFOR.Visible (end) *@
+@if (INNCSUMPA.INNCPLAPRO.Visible) { // INNCPLAPRO (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNCPLAPRO.HeaderCellClass)"><span id="elh_INNCSUMPA_INNCPLAPRO" class="INNCSUMPA_INNCPLAPRO">@Html.Raw(INNCSUMPA.INNCPLAPRO.Caption)</span></th>
+} @* INNCPLAPRO.Visible (end) *@
+@if (INNCSUMPA.INNCCONFIR.Visible) { // INNCCONFIR (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNCCONFIR.HeaderCellClass)"><span id="elh_INNCSUMPA_INNCCONFIR" class="INNCSUMPA_INNCCONFIR">@Html.Raw(INNCSUMPA.INNCCONFIR.Caption)</span></th>
+} @* INNCCONFIR.Visible (end) *@
+@if (INNCSUMPA.INNCAUTCONFCOMPEN.Visible) { // INNCAUTCONFCOMPEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.HeaderCellClass)"><span id="elh_INNCSUMPA_INNCAUTCONFCOMPEN" class="INNCSUMPA_INNCAUTCONFCOMPEN">@Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.Caption)</span></th>
+} @* INNCAUTCONFCOMPEN.Visible (end) *@
+@if (INNCSUMPA.INNCAUTANULCOMPEN.Visible) { // INNCAUTANULCOMPEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.HeaderCellClass)"><span id="elh_INNCSUMPA_INNCAUTANULCOMPEN" class="INNCSUMPA_INNCAUTANULCOMPEN">@Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.Caption)</span></th>
+} @* INNCAUTANULCOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCINTERCOMPEN.Visible) { // ISCINTERCOMPEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCINTERCOMPEN.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCINTERCOMPEN" class="INNCSUMPA_ISCINTERCOMPEN">@Html.Raw(INNCSUMPA.ISCINTERCOMPEN.Caption)</span></th>
+} @* ISCINTERCOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCMEDREMICOMPEN.Visible) { // ISCMEDREMICOMPEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCMEDREMICOMPEN" class="INNCSUMPA_ISCMEDREMICOMPEN">@Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.Caption)</span></th>
+} @* ISCMEDREMICOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCNUMMESCOMPEN.Visible) { // ISCNUMMESCOMPEN (begin)
+		<th class="@Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.HeaderCellClass)"><span id="elh_INNCSUMPA_ISCNUMMESCOMPEN" class="INNCSUMPA_ISCNUMMESCOMPEN">@Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.Caption)</span></th>
+} @* ISCNUMMESCOMPEN.Visible (end) *@
+	</tr>
+	</thead>
+	<tbody>
+@{ INNCSUMPA_Delete.RecordCount = 0; }
+@while (INNCSUMPA_Delete.Recordset != null && await INNCSUMPA_Delete.Recordset.ReadAsync()) { // DN
+	INNCSUMPA_Delete.RecordCount++;
+	INNCSUMPA_Delete.RowCnt++;
+
+	// Set row properties
+	INNCSUMPA_Delete.ResetAttributes();
+	INNCSUMPA_Delete.RowType = Config.RowTypeView; // View
+
+	// Get the field contents
+	await INNCSUMPA_Delete.LoadRowValues(INNCSUMPA_Delete.Recordset);
+
+	// Render row
+	await INNCSUMPA_Delete.RenderRow();
+	<tr @Html.Raw(INNCSUMPA_Delete.RowAttributes)>
+@if (INNCSUMPA.OID.Visible) { // OID (begin)
+		<td @Html.Raw(INNCSUMPA.OID.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_OID" class="INNCSUMPA_OID">
+<span @Html.Raw(INNCSUMPA.OID.ViewAttributes)>
+@Html.Raw(INNCSUMPA.OID.GetViewValue())</span>
+</span>
+</td>
+} @* OID.Visible (end) *@
+@if (INNCSUMPA.ADNINGRESO.Visible) { // ADNINGRESO (begin)
+		<td @Html.Raw(INNCSUMPA.ADNINGRESO.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ADNINGRESO" class="INNCSUMPA_ADNINGRESO">
+<span @Html.Raw(INNCSUMPA.ADNINGRESO.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ADNINGRESO.GetViewValue())</span>
+</span>
+</td>
+} @* ADNINGRESO.Visible (end) *@
+@if (INNCSUMPA.SLNORDSER.Visible) { // SLNORDSER (begin)
+		<td @Html.Raw(INNCSUMPA.SLNORDSER.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_SLNORDSER" class="INNCSUMPA_SLNORDSER">
+<span @Html.Raw(INNCSUMPA.SLNORDSER.ViewAttributes)>
+@Html.Raw(INNCSUMPA.SLNORDSER.GetViewValue())</span>
+</span>
+</td>
+} @* SLNORDSER.Visible (end) *@
+@if (INNCSUMPA.ISCESTPRO.Visible) { // ISCESTPRO (begin)
+		<td @Html.Raw(INNCSUMPA.ISCESTPRO.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCESTPRO" class="INNCSUMPA_ISCESTPRO">
+<span @Html.Raw(INNCSUMPA.ISCESTPRO.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCESTPRO.GetViewValue())</span>
+</span>
+</td>
+} @* ISCESTPRO.Visible (end) *@
+@if (INNCSUMPA.GEENMedico.Visible) { // GEENMedico (begin)
+		<td @Html.Raw(INNCSUMPA.GEENMedico.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_GEENMedico" class="INNCSUMPA_GEENMedico">
+<span @Html.Raw(INNCSUMPA.GEENMedico.ViewAttributes)>
+@Html.Raw(INNCSUMPA.GEENMedico.GetViewValue())</span>
+</span>
+</td>
+} @* GEENMedico.Visible (end) *@
+@if (INNCSUMPA.INNALMACE.Visible) { // INNALMACE (begin)
+		<td @Html.Raw(INNCSUMPA.INNALMACE.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNALMACE" class="INNCSUMPA_INNALMACE">
+<span @Html.Raw(INNCSUMPA.INNALMACE.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNALMACE.GetViewValue())</span>
+</span>
+</td>
+} @* INNALMACE.Visible (end) *@
+@if (INNCSUMPA.GENARESER.Visible) { // GENARESER (begin)
+		<td @Html.Raw(INNCSUMPA.GENARESER.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_GENARESER" class="INNCSUMPA_GENARESER">
+<span @Html.Raw(INNCSUMPA.GENARESER.ViewAttributes)>
+@Html.Raw(INNCSUMPA.GENARESER.GetViewValue())</span>
+</span>
+</td>
+} @* GENARESER.Visible (end) *@
+@if (INNCSUMPA.GENARESER1.Visible) { // GENARESER1 (begin)
+		<td @Html.Raw(INNCSUMPA.GENARESER1.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_GENARESER1" class="INNCSUMPA_GENARESER1">
+<span @Html.Raw(INNCSUMPA.GENARESER1.ViewAttributes)>
+@Html.Raw(INNCSUMPA.GENARESER1.GetViewValue())</span>
+</span>
+</td>
+} @* GENARESER1.Visible (end) *@
+@if (INNCSUMPA.ISCSUMIORIGEN.Visible) { // ISCSUMIORIGEN (begin)
+		<td @Html.Raw(INNCSUMPA.ISCSUMIORIGEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCSUMIORIGEN" class="INNCSUMPA_ISCSUMIORIGEN">
+<span @Html.Raw(INNCSUMPA.ISCSUMIORIGEN.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCSUMIORIGEN.GetViewValue())</span>
+</span>
+</td>
+} @* ISCSUMIORIGEN.Visible (end) *@
+@if (INNCSUMPA.ISCSUMIPENDI.Visible) { // ISCSUMIPENDI (begin)
+		<td @Html.Raw(INNCSUMPA.ISCSUMIPENDI.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCSUMIPENDI" class="INNCSUMPA_ISCSUMIPENDI">
+<span @Html.Raw(INNCSUMPA.ISCSUMIPENDI.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCSUMIPENDI.GetViewValue())</span>
+</span>
+</td>
+} @* ISCSUMIPENDI.Visible (end) *@
+@if (INNCSUMPA.INNORDDESC.Visible) { // INNORDDESC (begin)
+		<td @Html.Raw(INNCSUMPA.INNORDDESC.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNORDDESC" class="INNCSUMPA_INNORDDESC">
+<span @Html.Raw(INNCSUMPA.INNORDDESC.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNORDDESC.GetViewValue())</span>
+</span>
+</td>
+} @* INNORDDESC.Visible (end) *@
+@if (INNCSUMPA.ISCSUMGENPEN.Visible) { // ISCSUMGENPEN (begin)
+		<td @Html.Raw(INNCSUMPA.ISCSUMGENPEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCSUMGENPEN" class="INNCSUMPA_ISCSUMGENPEN">
+<span @Html.Raw(INNCSUMPA.ISCSUMGENPEN.ViewAttributes)>
+<input type="checkbox" value="@INNCSUMPA.ISCSUMGENPEN.GetViewValue()" disabled checked="@ConvertToBool(INNCSUMPA.ISCSUMGENPEN.CurrentValue)"></span>
+</span>
+</td>
+} @* ISCSUMGENPEN.Visible (end) *@
+@if (INNCSUMPA.ISCVRBASINC.Visible) { // ISCVRBASINC (begin)
+		<td @Html.Raw(INNCSUMPA.ISCVRBASINC.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCVRBASINC" class="INNCSUMPA_ISCVRBASINC">
+<span @Html.Raw(INNCSUMPA.ISCVRBASINC.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCVRBASINC.GetViewValue())</span>
+</span>
+</td>
+} @* ISCVRBASINC.Visible (end) *@
+@if (INNCSUMPA.ISCPORINCRE.Visible) { // ISCPORINCRE (begin)
+		<td @Html.Raw(INNCSUMPA.ISCPORINCRE.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCPORINCRE" class="INNCSUMPA_ISCPORINCRE">
+<span @Html.Raw(INNCSUMPA.ISCPORINCRE.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCPORINCRE.GetViewValue())</span>
+</span>
+</td>
+} @* ISCPORINCRE.Visible (end) *@
+@if (INNCSUMPA.ISCPORINCRE1.Visible) { // ISCPORINCRE1 (begin)
+		<td @Html.Raw(INNCSUMPA.ISCPORINCRE1.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCPORINCRE1" class="INNCSUMPA_ISCPORINCRE1">
+<span @Html.Raw(INNCSUMPA.ISCPORINCRE1.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCPORINCRE1.GetViewValue())</span>
+</span>
+</td>
+} @* ISCPORINCRE1.Visible (end) *@
+@if (INNCSUMPA.ISCVALINCRE.Visible) { // ISCVALINCRE (begin)
+		<td @Html.Raw(INNCSUMPA.ISCVALINCRE.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCVALINCRE" class="INNCSUMPA_ISCVALINCRE">
+<span @Html.Raw(INNCSUMPA.ISCVALINCRE.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCVALINCRE.GetViewValue())</span>
+</span>
+</td>
+} @* ISCVALINCRE.Visible (end) *@
+@if (INNCSUMPA.ISCVALINCRE1.Visible) { // ISCVALINCRE1 (begin)
+		<td @Html.Raw(INNCSUMPA.ISCVALINCRE1.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCVALINCRE1" class="INNCSUMPA_ISCVALINCRE1">
+<span @Html.Raw(INNCSUMPA.ISCVALINCRE1.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCVALINCRE1.GetViewValue())</span>
+</span>
+</td>
+} @* ISCVALINCRE1.Visible (end) *@
+@if (INNCSUMPA.ISCOIDORIHCRE.Visible) { // ISCOIDORIHCRE (begin)
+		<td @Html.Raw(INNCSUMPA.ISCOIDORIHCRE.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCOIDORIHCRE" class="INNCSUMPA_ISCOIDORIHCRE">
+<span @Html.Raw(INNCSUMPA.ISCOIDORIHCRE.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCOIDORIHCRE.GetViewValue())</span>
+</span>
+</td>
+} @* ISCOIDORIHCRE.Visible (end) *@
+@if (INNCSUMPA.ISCTIPSOLDIS.Visible) { // ISCTIPSOLDIS (begin)
+		<td @Html.Raw(INNCSUMPA.ISCTIPSOLDIS.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCTIPSOLDIS" class="INNCSUMPA_ISCTIPSOLDIS">
+<span @Html.Raw(INNCSUMPA.ISCTIPSOLDIS.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCTIPSOLDIS.GetViewValue())</span>
+</span>
+</td>
+} @* ISCTIPSOLDIS.Visible (end) *@
+@if (INNCSUMPA.INNDISFORREC.Visible) { // INNDISFORREC (begin)
+		<td @Html.Raw(INNCSUMPA.INNDISFORREC.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNDISFORREC" class="INNCSUMPA_INNDISFORREC">
+<span @Html.Raw(INNCSUMPA.INNDISFORREC.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNDISFORREC.GetViewValue())</span>
+</span>
+</td>
+} @* INNDISFORREC.Visible (end) *@
+@if (INNCSUMPA.INNPENDICAB.Visible) { // INNPENDICAB (begin)
+		<td @Html.Raw(INNCSUMPA.INNPENDICAB.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNPENDICAB" class="INNCSUMPA_INNPENDICAB">
+<span @Html.Raw(INNCSUMPA.INNPENDICAB.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNPENDICAB.GetViewValue())</span>
+</span>
+</td>
+} @* INNPENDICAB.Visible (end) *@
+@if (INNCSUMPA.ISCINDIDESA.Visible) { // ISCINDIDESA (begin)
+		<td @Html.Raw(INNCSUMPA.ISCINDIDESA.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCINDIDESA" class="INNCSUMPA_ISCINDIDESA">
+<span @Html.Raw(INNCSUMPA.ISCINDIDESA.ViewAttributes)>
+<input type="checkbox" value="@INNCSUMPA.ISCINDIDESA.GetViewValue()" disabled checked="@ConvertToBool(INNCSUMPA.ISCINDIDESA.CurrentValue)"></span>
+</span>
+</td>
+} @* ISCINDIDESA.Visible (end) *@
+@if (INNCSUMPA.ISCJUSTIFICA.Visible) { // ISCJUSTIFICA (begin)
+		<td @Html.Raw(INNCSUMPA.ISCJUSTIFICA.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCJUSTIFICA" class="INNCSUMPA_ISCJUSTIFICA">
+<span @Html.Raw(INNCSUMPA.ISCJUSTIFICA.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCJUSTIFICA.GetViewValue())</span>
+</span>
+</td>
+} @* ISCJUSTIFICA.Visible (end) *@
+@if (INNCSUMPA.ISCFECORIGEN.Visible) { // ISCFECORIGEN (begin)
+		<td @Html.Raw(INNCSUMPA.ISCFECORIGEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCFECORIGEN" class="INNCSUMPA_ISCFECORIGEN">
+<span @Html.Raw(INNCSUMPA.ISCFECORIGEN.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCFECORIGEN.GetViewValue())</span>
+</span>
+</td>
+} @* ISCFECORIGEN.Visible (end) *@
+@if (INNCSUMPA.ISCGFMIDFOR.Visible) { // ISCGFMIDFOR (begin)
+		<td @Html.Raw(INNCSUMPA.ISCGFMIDFOR.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCGFMIDFOR" class="INNCSUMPA_ISCGFMIDFOR">
+<span @Html.Raw(INNCSUMPA.ISCGFMIDFOR.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCGFMIDFOR.GetViewValue())</span>
+</span>
+</td>
+} @* ISCGFMIDFOR.Visible (end) *@
+@if (INNCSUMPA.INNCPLAPRO.Visible) { // INNCPLAPRO (begin)
+		<td @Html.Raw(INNCSUMPA.INNCPLAPRO.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNCPLAPRO" class="INNCSUMPA_INNCPLAPRO">
+<span @Html.Raw(INNCSUMPA.INNCPLAPRO.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNCPLAPRO.GetViewValue())</span>
+</span>
+</td>
+} @* INNCPLAPRO.Visible (end) *@
+@if (INNCSUMPA.INNCCONFIR.Visible) { // INNCCONFIR (begin)
+		<td @Html.Raw(INNCSUMPA.INNCCONFIR.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNCCONFIR" class="INNCSUMPA_INNCCONFIR">
+<span @Html.Raw(INNCSUMPA.INNCCONFIR.ViewAttributes)>
+<input type="checkbox" value="@INNCSUMPA.INNCCONFIR.GetViewValue()" disabled checked="@ConvertToBool(INNCSUMPA.INNCCONFIR.CurrentValue)"></span>
+</span>
+</td>
+} @* INNCCONFIR.Visible (end) *@
+@if (INNCSUMPA.INNCAUTCONFCOMPEN.Visible) { // INNCAUTCONFCOMPEN (begin)
+		<td @Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNCAUTCONFCOMPEN" class="INNCSUMPA_INNCAUTCONFCOMPEN">
+<span @Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.GetViewValue())</span>
+</span>
+</td>
+} @* INNCAUTCONFCOMPEN.Visible (end) *@
+@if (INNCSUMPA.INNCAUTANULCOMPEN.Visible) { // INNCAUTANULCOMPEN (begin)
+		<td @Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_INNCAUTANULCOMPEN" class="INNCSUMPA_INNCAUTANULCOMPEN">
+<span @Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.ViewAttributes)>
+@Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.GetViewValue())</span>
+</span>
+</td>
+} @* INNCAUTANULCOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCINTERCOMPEN.Visible) { // ISCINTERCOMPEN (begin)
+		<td @Html.Raw(INNCSUMPA.ISCINTERCOMPEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCINTERCOMPEN" class="INNCSUMPA_ISCINTERCOMPEN">
+<span @Html.Raw(INNCSUMPA.ISCINTERCOMPEN.ViewAttributes)>
+<input type="checkbox" value="@INNCSUMPA.ISCINTERCOMPEN.GetViewValue()" disabled checked="@ConvertToBool(INNCSUMPA.ISCINTERCOMPEN.CurrentValue)"></span>
+</span>
+</td>
+} @* ISCINTERCOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCMEDREMICOMPEN.Visible) { // ISCMEDREMICOMPEN (begin)
+		<td @Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCMEDREMICOMPEN" class="INNCSUMPA_ISCMEDREMICOMPEN">
+<span @Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.GetViewValue())</span>
+</span>
+</td>
+} @* ISCMEDREMICOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCNUMMESCOMPEN.Visible) { // ISCNUMMESCOMPEN (begin)
+		<td @Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.CellAttributes)>
+<span id="el@(INNCSUMPA_Delete.RowCnt)_INNCSUMPA_ISCNUMMESCOMPEN" class="INNCSUMPA_ISCNUMMESCOMPEN">
+<span @Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.ViewAttributes)>
+@Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.GetViewValue())</span>
+</span>
+</td>
+} @* ISCNUMMESCOMPEN.Visible (end) *@
+	</tr>
+}
+@{ INNCSUMPA_Delete.CloseRecordset(); }
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit">@Html.Raw(Language.Phrase("DeleteBtn"))</button>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-href="@AppPath(INNCSUMPA_Delete.ReturnUrl)">@Language.Phrase("CancelBtn")</button>
+</div>
+</form>
+@INNCSUMPA_Delete.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>

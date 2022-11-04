@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration date="2020/10/13" author="e.World Technology Ltd.">
+  <project id="{3DC5054A-CA8A-4B9E-84E7-55994334EA5F}" file="" name="project1" product="ASPNETMaker" version="16.0" datetime="2020/10/13 11:33:32" languagefolder="wwwroot/lang" userlevel="-2,&quot;Anonymous&quot;,0;">
+    <table id="INNCSUMPA" name="INNCSUMPA" caption="INNCSUMPA" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="INNPRESTAMOD" name="INNPRESTAMOD" caption="INNPRESTAMOD" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="VCNVISITANTE" name="VCNVISITANTE" caption="VCNVISITANTE" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="ULTIMO_INGRESO" name="ULTIMO_INGRESO" caption="ULTIMO INGRESO" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="View69" name="View69" caption="View 69" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+  </project>
+</configuration>

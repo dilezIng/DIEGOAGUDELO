@@ -1,0 +1,756 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	INNCSUMPA_Edit.Page_Render();
+
+	// Check action result
+	if (INNCSUMPA_Edit.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "edit";
+var fINNCSUMPAedit = currentForm = new ew.Form("fINNCSUMPAedit", "edit");
+
+// Validate form
+fINNCSUMPAedit.validate = function() {
+	if (!this.validateRequired)
+		return true; // Ignore validation
+	var $ = jQuery, fobj = this.getForm(), $fobj = $(fobj);
+	if ($fobj.find("#confirm").val() == "F")
+		return true;
+	var elm, felm, uelm, addcnt = 0;
+	var $k = $fobj.find("#" + this.formKeyCountName); // Get key_count
+	var rowcnt = ($k[0]) ? parseInt($k.val(), 10) : 1;
+	var startcnt = (rowcnt == 0) ? 0 : 1; // Check rowcnt == 0 => Inline-Add
+	var gridinsert = ["insert", "gridinsert"].includes($fobj.find("#action").val()) && $k[0];
+	for (var i = startcnt; i <= rowcnt; i++) {
+		var infix = ($k[0]) ? String(i) : "";
+		$fobj.data("rowindex", infix);
+	@if (INNCSUMPA_Edit.OID.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_OID");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.OID.RequiredErrorMessage.Replace("%s", INNCSUMPA.OID.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ADNINGRESO.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ADNINGRESO");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ADNINGRESO.RequiredErrorMessage.Replace("%s", INNCSUMPA.ADNINGRESO.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ADNINGRESO");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ADNINGRESO.ErrorMessage))");
+	@if (INNCSUMPA_Edit.SLNORDSER.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_SLNORDSER");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.SLNORDSER.RequiredErrorMessage.Replace("%s", INNCSUMPA.SLNORDSER.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_SLNORDSER");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.SLNORDSER.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCESTPRO.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCESTPRO");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCESTPRO.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCESTPRO.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCESTPRO");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCESTPRO.ErrorMessage))");
+	@if (INNCSUMPA_Edit.GEENMedico.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_GEENMedico");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.GEENMedico.RequiredErrorMessage.Replace("%s", INNCSUMPA.GEENMedico.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_GEENMedico");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.GEENMedico.ErrorMessage))");
+	@if (INNCSUMPA_Edit.INNALMACE.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNALMACE");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNALMACE.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNALMACE.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_INNALMACE");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNALMACE.ErrorMessage))");
+	@if (INNCSUMPA_Edit.GENARESER.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_GENARESER");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.GENARESER.RequiredErrorMessage.Replace("%s", INNCSUMPA.GENARESER.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_GENARESER");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.GENARESER.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCDETALL.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCDETALL");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCDETALL.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCDETALL.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.GENARESER1.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_GENARESER1");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.GENARESER1.RequiredErrorMessage.Replace("%s", INNCSUMPA.GENARESER1.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_GENARESER1");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.GENARESER1.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCSUMIORIGEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCSUMIORIGEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCSUMIORIGEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCSUMIORIGEN.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCSUMIORIGEN");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCSUMIORIGEN.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCSUMIPENDI.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCSUMIPENDI");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCSUMIPENDI.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCSUMIPENDI.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCSUMIPENDI");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCSUMIPENDI.ErrorMessage))");
+	@if (INNCSUMPA_Edit.INNORDDESC.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNORDDESC");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNORDDESC.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNORDDESC.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_INNORDDESC");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNORDDESC.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCSUMGENPEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCSUMGENPEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCSUMGENPEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCSUMGENPEN.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ISCVRBASINC.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCVRBASINC");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCVRBASINC.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCVRBASINC.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCVRBASINC");
+		if (elm && !ew.checkNumber(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCVRBASINC.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCPORINCRE.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCPORINCRE");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCPORINCRE.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCPORINCRE.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCPORINCRE");
+		if (elm && !ew.checkNumber(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCPORINCRE.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCPORINCRE1.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCPORINCRE1");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCPORINCRE1.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCPORINCRE1.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCPORINCRE1");
+		if (elm && !ew.checkNumber(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCPORINCRE1.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCVALINCRE.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCVALINCRE");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCVALINCRE.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCVALINCRE.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCVALINCRE");
+		if (elm && !ew.checkNumber(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCVALINCRE.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCVALINCRE1.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCVALINCRE1");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCVALINCRE1.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCVALINCRE1.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCVALINCRE1");
+		if (elm && !ew.checkNumber(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCVALINCRE1.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCOIDORIHCRE.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCOIDORIHCRE");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCOIDORIHCRE.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCOIDORIHCRE.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCOIDORIHCRE");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCOIDORIHCRE.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCTIPSOLDIS.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCTIPSOLDIS");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCTIPSOLDIS.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCTIPSOLDIS.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCTIPSOLDIS");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCTIPSOLDIS.ErrorMessage))");
+	@if (INNCSUMPA_Edit.INNDISFORREC.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNDISFORREC");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNDISFORREC.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNDISFORREC.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_INNDISFORREC");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNDISFORREC.ErrorMessage))");
+	@if (INNCSUMPA_Edit.INNPENDICAB.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNPENDICAB");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNPENDICAB.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNPENDICAB.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_INNPENDICAB");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNPENDICAB.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCINDIDESA.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCINDIDESA");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCINDIDESA.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCINDIDESA.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ISCJUSTIFICA.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCJUSTIFICA");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCJUSTIFICA.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCJUSTIFICA.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ISCFECORIGEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCFECORIGEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCFECORIGEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCFECORIGEN.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCFECORIGEN");
+		if (elm && !ew.checkDateDef(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCFECORIGEN.ErrorMessage))");
+	@if (INNCSUMPA_Edit.ISCGFMIDFOR.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCGFMIDFOR");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCGFMIDFOR.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCGFMIDFOR.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.INNCPLAPRO.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNCPLAPRO");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNCPLAPRO.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNCPLAPRO.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_INNCPLAPRO");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNCPLAPRO.ErrorMessage))");
+	@if (INNCSUMPA_Edit.INNCCONFIR.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNCCONFIR");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNCCONFIR.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNCCONFIR.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.INNCAUTCONFCOMPEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNCAUTCONFCOMPEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNCAUTCONFCOMPEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNCAUTCONFCOMPEN.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.INNCAUTANULCOMPEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_INNCAUTANULCOMPEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.INNCAUTANULCOMPEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.INNCAUTANULCOMPEN.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ISCINTERCOMPEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCINTERCOMPEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCINTERCOMPEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCINTERCOMPEN.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ISCMEDREMICOMPEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCMEDREMICOMPEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCMEDREMICOMPEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCMEDREMICOMPEN.Caption)))");
+		</text>
+	}
+	@if (INNCSUMPA_Edit.ISCNUMMESCOMPEN.Required) {
+		<text>
+		elm = this.getElements("x" + infix + "_ISCNUMMESCOMPEN");
+		if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCNUMMESCOMPEN.RequiredErrorMessage.Replace("%s", INNCSUMPA.ISCNUMMESCOMPEN.Caption)))");
+		</text>
+	}
+		elm = this.getElements("x" + infix + "_ISCNUMMESCOMPEN");
+		if (elm && !ew.checkInteger(elm.value))
+			return this.onError(elm, "@Html.Raw(JsEncode(INNCSUMPA.ISCNUMMESCOMPEN.ErrorMessage))");
+
+		// Fire Form_CustomValidate event
+		if (!this.Form_CustomValidate(fobj))
+			return false;
+	}
+
+	// Process detail forms
+	var dfs = $fobj.find("input[name='detailpage']").get();
+	for (var i = 0; i < dfs.length; i++) {
+		var df = dfs[i], val = df.value;
+		if (val && ew.forms[val])
+			if (!ew.forms[val].validate())
+				return false;
+	}
+	return true;
+}
+
+// Form_CustomValidate event
+fINNCSUMPAedit.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fINNCSUMPAedit.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+fINNCSUMPAedit.lists["x_ISCSUMGENPEN"] = @Html.Raw(INNCSUMPA_Edit.ISCSUMGENPEN.Lookup.ToClientList());
+fINNCSUMPAedit.lists["x_ISCSUMGENPEN"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Edit.ISCSUMGENPEN.Options(false))); // DN
+fINNCSUMPAedit.lists["x_ISCINDIDESA"] = @Html.Raw(INNCSUMPA_Edit.ISCINDIDESA.Lookup.ToClientList());
+fINNCSUMPAedit.lists["x_ISCINDIDESA"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Edit.ISCINDIDESA.Options(false))); // DN
+fINNCSUMPAedit.lists["x_INNCCONFIR"] = @Html.Raw(INNCSUMPA_Edit.INNCCONFIR.Lookup.ToClientList());
+fINNCSUMPAedit.lists["x_INNCCONFIR"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Edit.INNCCONFIR.Options(false))); // DN
+fINNCSUMPAedit.lists["x_ISCINTERCOMPEN"] = @Html.Raw(INNCSUMPA_Edit.ISCINTERCOMPEN.Lookup.ToClientList());
+fINNCSUMPAedit.lists["x_ISCINTERCOMPEN"].options = @Html.Raw(ConvertToJson(INNCSUMPA_Edit.ISCINTERCOMPEN.Options(false))); // DN
+
+// Form object for search
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+@INNCSUMPA_Edit.ShowPageHeader()
+@INNCSUMPA_Edit.ShowMessages()
+<form name="fINNCSUMPAedit" id="fINNCSUMPAedit" class="@INNCSUMPA_Edit.FormClassName" action="@AppPath(CurrentPageName())" method="post">
+@if (INNCSUMPA_Edit.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<input type="hidden" name="action" id="action" value="update">
+@if (INNCSUMPA_Edit.IsModal) {
+<input type="hidden" name="modal" value="@ConvertToInt(INNCSUMPA_Edit.IsModal)">
+}
+<div class="ew-edit-div"><!-- page* -->
+@if (INNCSUMPA.OID.Visible) { // OID.Visible (begin)
+	<div id="r_OID" class="form-group row">
+		<label id="elh_INNCSUMPA_OID" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.OID.Caption)@Html.Raw(INNCSUMPA.OID.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.OID.CellAttributes)>
+<span id="el_INNCSUMPA_OID">
+<span @Html.Raw(INNCSUMPA.OID.ViewAttributes)>
+<input type="text" readonly class="form-control-plaintext" value="@RemoveHtml(Convert.ToString(INNCSUMPA.OID.EditValue))"></span>
+</span>
+<input type="hidden" data-table="INNCSUMPA" data-field="x_OID" name="x_OID" id="x_OID" value="@INNCSUMPA.OID.CurrentValue">
+@Html.Raw(INNCSUMPA.OID.CustomMessage)</div></div>
+	</div>
+} @* OID.Visible (end) *@
+@if (INNCSUMPA.ADNINGRESO.Visible) { // ADNINGRESO.Visible (begin)
+	<div id="r_ADNINGRESO" class="form-group row">
+		<label id="elh_INNCSUMPA_ADNINGRESO" for="x_ADNINGRESO" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ADNINGRESO.Caption)@Html.Raw(INNCSUMPA.ADNINGRESO.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ADNINGRESO.CellAttributes)>
+<span id="el_INNCSUMPA_ADNINGRESO">
+<input type="text" data-table="INNCSUMPA" data-field="x_ADNINGRESO" name="x_ADNINGRESO" id="x_ADNINGRESO" size="30" placeholder="@INNCSUMPA.ADNINGRESO.PlaceHolder" value="@INNCSUMPA.ADNINGRESO.EditValue" @Html.Raw(INNCSUMPA.ADNINGRESO.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ADNINGRESO.CustomMessage)</div></div>
+	</div>
+} @* ADNINGRESO.Visible (end) *@
+@if (INNCSUMPA.SLNORDSER.Visible) { // SLNORDSER.Visible (begin)
+	<div id="r_SLNORDSER" class="form-group row">
+		<label id="elh_INNCSUMPA_SLNORDSER" for="x_SLNORDSER" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.SLNORDSER.Caption)@Html.Raw(INNCSUMPA.SLNORDSER.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.SLNORDSER.CellAttributes)>
+<span id="el_INNCSUMPA_SLNORDSER">
+<input type="text" data-table="INNCSUMPA" data-field="x_SLNORDSER" name="x_SLNORDSER" id="x_SLNORDSER" size="30" placeholder="@INNCSUMPA.SLNORDSER.PlaceHolder" value="@INNCSUMPA.SLNORDSER.EditValue" @Html.Raw(INNCSUMPA.SLNORDSER.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.SLNORDSER.CustomMessage)</div></div>
+	</div>
+} @* SLNORDSER.Visible (end) *@
+@if (INNCSUMPA.ISCESTPRO.Visible) { // ISCESTPRO.Visible (begin)
+	<div id="r_ISCESTPRO" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCESTPRO" for="x_ISCESTPRO" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCESTPRO.Caption)@Html.Raw(INNCSUMPA.ISCESTPRO.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCESTPRO.CellAttributes)>
+<span id="el_INNCSUMPA_ISCESTPRO">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCESTPRO" name="x_ISCESTPRO" id="x_ISCESTPRO" size="30" placeholder="@INNCSUMPA.ISCESTPRO.PlaceHolder" value="@INNCSUMPA.ISCESTPRO.EditValue" @Html.Raw(INNCSUMPA.ISCESTPRO.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCESTPRO.CustomMessage)</div></div>
+	</div>
+} @* ISCESTPRO.Visible (end) *@
+@if (INNCSUMPA.GEENMedico.Visible) { // GEENMedico.Visible (begin)
+	<div id="r_GEENMedico" class="form-group row">
+		<label id="elh_INNCSUMPA_GEENMedico" for="x_GEENMedico" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.GEENMedico.Caption)@Html.Raw(INNCSUMPA.GEENMedico.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.GEENMedico.CellAttributes)>
+<span id="el_INNCSUMPA_GEENMedico">
+<input type="text" data-table="INNCSUMPA" data-field="x_GEENMedico" name="x_GEENMedico" id="x_GEENMedico" size="30" placeholder="@INNCSUMPA.GEENMedico.PlaceHolder" value="@INNCSUMPA.GEENMedico.EditValue" @Html.Raw(INNCSUMPA.GEENMedico.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.GEENMedico.CustomMessage)</div></div>
+	</div>
+} @* GEENMedico.Visible (end) *@
+@if (INNCSUMPA.INNALMACE.Visible) { // INNALMACE.Visible (begin)
+	<div id="r_INNALMACE" class="form-group row">
+		<label id="elh_INNCSUMPA_INNALMACE" for="x_INNALMACE" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNALMACE.Caption)@Html.Raw(INNCSUMPA.INNALMACE.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNALMACE.CellAttributes)>
+<span id="el_INNCSUMPA_INNALMACE">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNALMACE" name="x_INNALMACE" id="x_INNALMACE" size="30" placeholder="@INNCSUMPA.INNALMACE.PlaceHolder" value="@INNCSUMPA.INNALMACE.EditValue" @Html.Raw(INNCSUMPA.INNALMACE.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNALMACE.CustomMessage)</div></div>
+	</div>
+} @* INNALMACE.Visible (end) *@
+@if (INNCSUMPA.GENARESER.Visible) { // GENARESER.Visible (begin)
+	<div id="r_GENARESER" class="form-group row">
+		<label id="elh_INNCSUMPA_GENARESER" for="x_GENARESER" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.GENARESER.Caption)@Html.Raw(INNCSUMPA.GENARESER.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.GENARESER.CellAttributes)>
+<span id="el_INNCSUMPA_GENARESER">
+<input type="text" data-table="INNCSUMPA" data-field="x_GENARESER" name="x_GENARESER" id="x_GENARESER" size="30" placeholder="@INNCSUMPA.GENARESER.PlaceHolder" value="@INNCSUMPA.GENARESER.EditValue" @Html.Raw(INNCSUMPA.GENARESER.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.GENARESER.CustomMessage)</div></div>
+	</div>
+} @* GENARESER.Visible (end) *@
+@if (INNCSUMPA.ISCDETALL.Visible) { // ISCDETALL.Visible (begin)
+	<div id="r_ISCDETALL" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCDETALL" for="x_ISCDETALL" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCDETALL.Caption)@Html.Raw(INNCSUMPA.ISCDETALL.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCDETALL.CellAttributes)>
+<span id="el_INNCSUMPA_ISCDETALL">
+<textarea data-table="INNCSUMPA" data-field="x_ISCDETALL" name="x_ISCDETALL" id="x_ISCDETALL" cols="35" rows="4" placeholder="@INNCSUMPA.ISCDETALL.PlaceHolder" @Html.Raw(INNCSUMPA.ISCDETALL.EditAttributes)>@INNCSUMPA.ISCDETALL.EditValue</textarea>
+</span>
+@Html.Raw(INNCSUMPA.ISCDETALL.CustomMessage)</div></div>
+	</div>
+} @* ISCDETALL.Visible (end) *@
+@if (INNCSUMPA.GENARESER1.Visible) { // GENARESER1.Visible (begin)
+	<div id="r_GENARESER1" class="form-group row">
+		<label id="elh_INNCSUMPA_GENARESER1" for="x_GENARESER1" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.GENARESER1.Caption)@Html.Raw(INNCSUMPA.GENARESER1.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.GENARESER1.CellAttributes)>
+<span id="el_INNCSUMPA_GENARESER1">
+<input type="text" data-table="INNCSUMPA" data-field="x_GENARESER1" name="x_GENARESER1" id="x_GENARESER1" size="30" placeholder="@INNCSUMPA.GENARESER1.PlaceHolder" value="@INNCSUMPA.GENARESER1.EditValue" @Html.Raw(INNCSUMPA.GENARESER1.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.GENARESER1.CustomMessage)</div></div>
+	</div>
+} @* GENARESER1.Visible (end) *@
+@if (INNCSUMPA.ISCSUMIORIGEN.Visible) { // ISCSUMIORIGEN.Visible (begin)
+	<div id="r_ISCSUMIORIGEN" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCSUMIORIGEN" for="x_ISCSUMIORIGEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCSUMIORIGEN.Caption)@Html.Raw(INNCSUMPA.ISCSUMIORIGEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCSUMIORIGEN.CellAttributes)>
+<span id="el_INNCSUMPA_ISCSUMIORIGEN">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCSUMIORIGEN" name="x_ISCSUMIORIGEN" id="x_ISCSUMIORIGEN" size="30" placeholder="@INNCSUMPA.ISCSUMIORIGEN.PlaceHolder" value="@INNCSUMPA.ISCSUMIORIGEN.EditValue" @Html.Raw(INNCSUMPA.ISCSUMIORIGEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCSUMIORIGEN.CustomMessage)</div></div>
+	</div>
+} @* ISCSUMIORIGEN.Visible (end) *@
+@if (INNCSUMPA.ISCSUMIPENDI.Visible) { // ISCSUMIPENDI.Visible (begin)
+	<div id="r_ISCSUMIPENDI" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCSUMIPENDI" for="x_ISCSUMIPENDI" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCSUMIPENDI.Caption)@Html.Raw(INNCSUMPA.ISCSUMIPENDI.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCSUMIPENDI.CellAttributes)>
+<span id="el_INNCSUMPA_ISCSUMIPENDI">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCSUMIPENDI" name="x_ISCSUMIPENDI" id="x_ISCSUMIPENDI" size="30" placeholder="@INNCSUMPA.ISCSUMIPENDI.PlaceHolder" value="@INNCSUMPA.ISCSUMIPENDI.EditValue" @Html.Raw(INNCSUMPA.ISCSUMIPENDI.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCSUMIPENDI.CustomMessage)</div></div>
+	</div>
+} @* ISCSUMIPENDI.Visible (end) *@
+@if (INNCSUMPA.INNORDDESC.Visible) { // INNORDDESC.Visible (begin)
+	<div id="r_INNORDDESC" class="form-group row">
+		<label id="elh_INNCSUMPA_INNORDDESC" for="x_INNORDDESC" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNORDDESC.Caption)@Html.Raw(INNCSUMPA.INNORDDESC.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNORDDESC.CellAttributes)>
+<span id="el_INNCSUMPA_INNORDDESC">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNORDDESC" name="x_INNORDDESC" id="x_INNORDDESC" size="30" placeholder="@INNCSUMPA.INNORDDESC.PlaceHolder" value="@INNCSUMPA.INNORDDESC.EditValue" @Html.Raw(INNCSUMPA.INNORDDESC.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNORDDESC.CustomMessage)</div></div>
+	</div>
+} @* INNORDDESC.Visible (end) *@
+@if (INNCSUMPA.ISCSUMGENPEN.Visible) { // ISCSUMGENPEN.Visible (begin)
+	<div id="r_ISCSUMGENPEN" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCSUMGENPEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCSUMGENPEN.Caption)@Html.Raw(INNCSUMPA.ISCSUMGENPEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCSUMGENPEN.CellAttributes)>
+<span id="el_INNCSUMPA_ISCSUMGENPEN">
+<input type="checkbox" data-table="INNCSUMPA" data-field="x_ISCSUMGENPEN" name="x_ISCSUMGENPEN" id="x_ISCSUMGENPEN" value="1" checked="@ConvertToBool(INNCSUMPA.ISCSUMGENPEN.CurrentValue)" @Html.Raw(INNCSUMPA.ISCSUMGENPEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCSUMGENPEN.CustomMessage)</div></div>
+	</div>
+} @* ISCSUMGENPEN.Visible (end) *@
+@if (INNCSUMPA.ISCVRBASINC.Visible) { // ISCVRBASINC.Visible (begin)
+	<div id="r_ISCVRBASINC" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCVRBASINC" for="x_ISCVRBASINC" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCVRBASINC.Caption)@Html.Raw(INNCSUMPA.ISCVRBASINC.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCVRBASINC.CellAttributes)>
+<span id="el_INNCSUMPA_ISCVRBASINC">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCVRBASINC" name="x_ISCVRBASINC" id="x_ISCVRBASINC" size="30" placeholder="@INNCSUMPA.ISCVRBASINC.PlaceHolder" value="@INNCSUMPA.ISCVRBASINC.EditValue" @Html.Raw(INNCSUMPA.ISCVRBASINC.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCVRBASINC.CustomMessage)</div></div>
+	</div>
+} @* ISCVRBASINC.Visible (end) *@
+@if (INNCSUMPA.ISCPORINCRE.Visible) { // ISCPORINCRE.Visible (begin)
+	<div id="r_ISCPORINCRE" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCPORINCRE" for="x_ISCPORINCRE" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCPORINCRE.Caption)@Html.Raw(INNCSUMPA.ISCPORINCRE.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCPORINCRE.CellAttributes)>
+<span id="el_INNCSUMPA_ISCPORINCRE">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCPORINCRE" name="x_ISCPORINCRE" id="x_ISCPORINCRE" size="30" placeholder="@INNCSUMPA.ISCPORINCRE.PlaceHolder" value="@INNCSUMPA.ISCPORINCRE.EditValue" @Html.Raw(INNCSUMPA.ISCPORINCRE.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCPORINCRE.CustomMessage)</div></div>
+	</div>
+} @* ISCPORINCRE.Visible (end) *@
+@if (INNCSUMPA.ISCPORINCRE1.Visible) { // ISCPORINCRE1.Visible (begin)
+	<div id="r_ISCPORINCRE1" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCPORINCRE1" for="x_ISCPORINCRE1" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCPORINCRE1.Caption)@Html.Raw(INNCSUMPA.ISCPORINCRE1.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCPORINCRE1.CellAttributes)>
+<span id="el_INNCSUMPA_ISCPORINCRE1">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCPORINCRE1" name="x_ISCPORINCRE1" id="x_ISCPORINCRE1" size="30" placeholder="@INNCSUMPA.ISCPORINCRE1.PlaceHolder" value="@INNCSUMPA.ISCPORINCRE1.EditValue" @Html.Raw(INNCSUMPA.ISCPORINCRE1.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCPORINCRE1.CustomMessage)</div></div>
+	</div>
+} @* ISCPORINCRE1.Visible (end) *@
+@if (INNCSUMPA.ISCVALINCRE.Visible) { // ISCVALINCRE.Visible (begin)
+	<div id="r_ISCVALINCRE" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCVALINCRE" for="x_ISCVALINCRE" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCVALINCRE.Caption)@Html.Raw(INNCSUMPA.ISCVALINCRE.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCVALINCRE.CellAttributes)>
+<span id="el_INNCSUMPA_ISCVALINCRE">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCVALINCRE" name="x_ISCVALINCRE" id="x_ISCVALINCRE" size="30" placeholder="@INNCSUMPA.ISCVALINCRE.PlaceHolder" value="@INNCSUMPA.ISCVALINCRE.EditValue" @Html.Raw(INNCSUMPA.ISCVALINCRE.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCVALINCRE.CustomMessage)</div></div>
+	</div>
+} @* ISCVALINCRE.Visible (end) *@
+@if (INNCSUMPA.ISCVALINCRE1.Visible) { // ISCVALINCRE1.Visible (begin)
+	<div id="r_ISCVALINCRE1" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCVALINCRE1" for="x_ISCVALINCRE1" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCVALINCRE1.Caption)@Html.Raw(INNCSUMPA.ISCVALINCRE1.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCVALINCRE1.CellAttributes)>
+<span id="el_INNCSUMPA_ISCVALINCRE1">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCVALINCRE1" name="x_ISCVALINCRE1" id="x_ISCVALINCRE1" size="30" placeholder="@INNCSUMPA.ISCVALINCRE1.PlaceHolder" value="@INNCSUMPA.ISCVALINCRE1.EditValue" @Html.Raw(INNCSUMPA.ISCVALINCRE1.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCVALINCRE1.CustomMessage)</div></div>
+	</div>
+} @* ISCVALINCRE1.Visible (end) *@
+@if (INNCSUMPA.ISCOIDORIHCRE.Visible) { // ISCOIDORIHCRE.Visible (begin)
+	<div id="r_ISCOIDORIHCRE" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCOIDORIHCRE" for="x_ISCOIDORIHCRE" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCOIDORIHCRE.Caption)@Html.Raw(INNCSUMPA.ISCOIDORIHCRE.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCOIDORIHCRE.CellAttributes)>
+<span id="el_INNCSUMPA_ISCOIDORIHCRE">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCOIDORIHCRE" name="x_ISCOIDORIHCRE" id="x_ISCOIDORIHCRE" size="30" placeholder="@INNCSUMPA.ISCOIDORIHCRE.PlaceHolder" value="@INNCSUMPA.ISCOIDORIHCRE.EditValue" @Html.Raw(INNCSUMPA.ISCOIDORIHCRE.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCOIDORIHCRE.CustomMessage)</div></div>
+	</div>
+} @* ISCOIDORIHCRE.Visible (end) *@
+@if (INNCSUMPA.ISCTIPSOLDIS.Visible) { // ISCTIPSOLDIS.Visible (begin)
+	<div id="r_ISCTIPSOLDIS" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCTIPSOLDIS" for="x_ISCTIPSOLDIS" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCTIPSOLDIS.Caption)@Html.Raw(INNCSUMPA.ISCTIPSOLDIS.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCTIPSOLDIS.CellAttributes)>
+<span id="el_INNCSUMPA_ISCTIPSOLDIS">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCTIPSOLDIS" name="x_ISCTIPSOLDIS" id="x_ISCTIPSOLDIS" size="30" placeholder="@INNCSUMPA.ISCTIPSOLDIS.PlaceHolder" value="@INNCSUMPA.ISCTIPSOLDIS.EditValue" @Html.Raw(INNCSUMPA.ISCTIPSOLDIS.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCTIPSOLDIS.CustomMessage)</div></div>
+	</div>
+} @* ISCTIPSOLDIS.Visible (end) *@
+@if (INNCSUMPA.INNDISFORREC.Visible) { // INNDISFORREC.Visible (begin)
+	<div id="r_INNDISFORREC" class="form-group row">
+		<label id="elh_INNCSUMPA_INNDISFORREC" for="x_INNDISFORREC" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNDISFORREC.Caption)@Html.Raw(INNCSUMPA.INNDISFORREC.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNDISFORREC.CellAttributes)>
+<span id="el_INNCSUMPA_INNDISFORREC">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNDISFORREC" name="x_INNDISFORREC" id="x_INNDISFORREC" size="30" placeholder="@INNCSUMPA.INNDISFORREC.PlaceHolder" value="@INNCSUMPA.INNDISFORREC.EditValue" @Html.Raw(INNCSUMPA.INNDISFORREC.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNDISFORREC.CustomMessage)</div></div>
+	</div>
+} @* INNDISFORREC.Visible (end) *@
+@if (INNCSUMPA.INNPENDICAB.Visible) { // INNPENDICAB.Visible (begin)
+	<div id="r_INNPENDICAB" class="form-group row">
+		<label id="elh_INNCSUMPA_INNPENDICAB" for="x_INNPENDICAB" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNPENDICAB.Caption)@Html.Raw(INNCSUMPA.INNPENDICAB.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNPENDICAB.CellAttributes)>
+<span id="el_INNCSUMPA_INNPENDICAB">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNPENDICAB" name="x_INNPENDICAB" id="x_INNPENDICAB" size="30" placeholder="@INNCSUMPA.INNPENDICAB.PlaceHolder" value="@INNCSUMPA.INNPENDICAB.EditValue" @Html.Raw(INNCSUMPA.INNPENDICAB.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNPENDICAB.CustomMessage)</div></div>
+	</div>
+} @* INNPENDICAB.Visible (end) *@
+@if (INNCSUMPA.ISCINDIDESA.Visible) { // ISCINDIDESA.Visible (begin)
+	<div id="r_ISCINDIDESA" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCINDIDESA" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCINDIDESA.Caption)@Html.Raw(INNCSUMPA.ISCINDIDESA.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCINDIDESA.CellAttributes)>
+<span id="el_INNCSUMPA_ISCINDIDESA">
+<input type="checkbox" data-table="INNCSUMPA" data-field="x_ISCINDIDESA" name="x_ISCINDIDESA" id="x_ISCINDIDESA" value="1" checked="@ConvertToBool(INNCSUMPA.ISCINDIDESA.CurrentValue)" @Html.Raw(INNCSUMPA.ISCINDIDESA.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCINDIDESA.CustomMessage)</div></div>
+	</div>
+} @* ISCINDIDESA.Visible (end) *@
+@if (INNCSUMPA.ISCJUSTIFICA.Visible) { // ISCJUSTIFICA.Visible (begin)
+	<div id="r_ISCJUSTIFICA" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCJUSTIFICA" for="x_ISCJUSTIFICA" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCJUSTIFICA.Caption)@Html.Raw(INNCSUMPA.ISCJUSTIFICA.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCJUSTIFICA.CellAttributes)>
+<span id="el_INNCSUMPA_ISCJUSTIFICA">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCJUSTIFICA" name="x_ISCJUSTIFICA" id="x_ISCJUSTIFICA" size="30" maxlength="4000" placeholder="@INNCSUMPA.ISCJUSTIFICA.PlaceHolder" value="@INNCSUMPA.ISCJUSTIFICA.EditValue" @Html.Raw(INNCSUMPA.ISCJUSTIFICA.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCJUSTIFICA.CustomMessage)</div></div>
+	</div>
+} @* ISCJUSTIFICA.Visible (end) *@
+@if (INNCSUMPA.ISCFECORIGEN.Visible) { // ISCFECORIGEN.Visible (begin)
+	<div id="r_ISCFECORIGEN" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCFECORIGEN" for="x_ISCFECORIGEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCFECORIGEN.Caption)@Html.Raw(INNCSUMPA.ISCFECORIGEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCFECORIGEN.CellAttributes)>
+<span id="el_INNCSUMPA_ISCFECORIGEN">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCFECORIGEN" name="x_ISCFECORIGEN" id="x_ISCFECORIGEN" placeholder="@INNCSUMPA.ISCFECORIGEN.PlaceHolder" value="@INNCSUMPA.ISCFECORIGEN.EditValue" @Html.Raw(INNCSUMPA.ISCFECORIGEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCFECORIGEN.CustomMessage)</div></div>
+	</div>
+} @* ISCFECORIGEN.Visible (end) *@
+@if (INNCSUMPA.ISCGFMIDFOR.Visible) { // ISCGFMIDFOR.Visible (begin)
+	<div id="r_ISCGFMIDFOR" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCGFMIDFOR" for="x_ISCGFMIDFOR" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCGFMIDFOR.Caption)@Html.Raw(INNCSUMPA.ISCGFMIDFOR.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCGFMIDFOR.CellAttributes)>
+<span id="el_INNCSUMPA_ISCGFMIDFOR">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCGFMIDFOR" name="x_ISCGFMIDFOR" id="x_ISCGFMIDFOR" size="30" maxlength="100" placeholder="@INNCSUMPA.ISCGFMIDFOR.PlaceHolder" value="@INNCSUMPA.ISCGFMIDFOR.EditValue" @Html.Raw(INNCSUMPA.ISCGFMIDFOR.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCGFMIDFOR.CustomMessage)</div></div>
+	</div>
+} @* ISCGFMIDFOR.Visible (end) *@
+@if (INNCSUMPA.INNCPLAPRO.Visible) { // INNCPLAPRO.Visible (begin)
+	<div id="r_INNCPLAPRO" class="form-group row">
+		<label id="elh_INNCSUMPA_INNCPLAPRO" for="x_INNCPLAPRO" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNCPLAPRO.Caption)@Html.Raw(INNCSUMPA.INNCPLAPRO.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNCPLAPRO.CellAttributes)>
+<span id="el_INNCSUMPA_INNCPLAPRO">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNCPLAPRO" name="x_INNCPLAPRO" id="x_INNCPLAPRO" size="30" placeholder="@INNCSUMPA.INNCPLAPRO.PlaceHolder" value="@INNCSUMPA.INNCPLAPRO.EditValue" @Html.Raw(INNCSUMPA.INNCPLAPRO.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNCPLAPRO.CustomMessage)</div></div>
+	</div>
+} @* INNCPLAPRO.Visible (end) *@
+@if (INNCSUMPA.INNCCONFIR.Visible) { // INNCCONFIR.Visible (begin)
+	<div id="r_INNCCONFIR" class="form-group row">
+		<label id="elh_INNCSUMPA_INNCCONFIR" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNCCONFIR.Caption)@Html.Raw(INNCSUMPA.INNCCONFIR.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNCCONFIR.CellAttributes)>
+<span id="el_INNCSUMPA_INNCCONFIR">
+<input type="checkbox" data-table="INNCSUMPA" data-field="x_INNCCONFIR" name="x_INNCCONFIR" id="x_INNCCONFIR" value="1" checked="@ConvertToBool(INNCSUMPA.INNCCONFIR.CurrentValue)" @Html.Raw(INNCSUMPA.INNCCONFIR.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNCCONFIR.CustomMessage)</div></div>
+	</div>
+} @* INNCCONFIR.Visible (end) *@
+@if (INNCSUMPA.INNCAUTCONFCOMPEN.Visible) { // INNCAUTCONFCOMPEN.Visible (begin)
+	<div id="r_INNCAUTCONFCOMPEN" class="form-group row">
+		<label id="elh_INNCSUMPA_INNCAUTCONFCOMPEN" for="x_INNCAUTCONFCOMPEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.Caption)@Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.CellAttributes)>
+<span id="el_INNCSUMPA_INNCAUTCONFCOMPEN">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNCAUTCONFCOMPEN" name="x_INNCAUTCONFCOMPEN" id="x_INNCAUTCONFCOMPEN" size="30" maxlength="32" placeholder="@INNCSUMPA.INNCAUTCONFCOMPEN.PlaceHolder" value="@INNCSUMPA.INNCAUTCONFCOMPEN.EditValue" @Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNCAUTCONFCOMPEN.CustomMessage)</div></div>
+	</div>
+} @* INNCAUTCONFCOMPEN.Visible (end) *@
+@if (INNCSUMPA.INNCAUTANULCOMPEN.Visible) { // INNCAUTANULCOMPEN.Visible (begin)
+	<div id="r_INNCAUTANULCOMPEN" class="form-group row">
+		<label id="elh_INNCSUMPA_INNCAUTANULCOMPEN" for="x_INNCAUTANULCOMPEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.Caption)@Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.CellAttributes)>
+<span id="el_INNCSUMPA_INNCAUTANULCOMPEN">
+<input type="text" data-table="INNCSUMPA" data-field="x_INNCAUTANULCOMPEN" name="x_INNCAUTANULCOMPEN" id="x_INNCAUTANULCOMPEN" size="30" maxlength="32" placeholder="@INNCSUMPA.INNCAUTANULCOMPEN.PlaceHolder" value="@INNCSUMPA.INNCAUTANULCOMPEN.EditValue" @Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.INNCAUTANULCOMPEN.CustomMessage)</div></div>
+	</div>
+} @* INNCAUTANULCOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCINTERCOMPEN.Visible) { // ISCINTERCOMPEN.Visible (begin)
+	<div id="r_ISCINTERCOMPEN" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCINTERCOMPEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCINTERCOMPEN.Caption)@Html.Raw(INNCSUMPA.ISCINTERCOMPEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCINTERCOMPEN.CellAttributes)>
+<span id="el_INNCSUMPA_ISCINTERCOMPEN">
+<input type="checkbox" data-table="INNCSUMPA" data-field="x_ISCINTERCOMPEN" name="x_ISCINTERCOMPEN" id="x_ISCINTERCOMPEN" value="1" checked="@ConvertToBool(INNCSUMPA.ISCINTERCOMPEN.CurrentValue)" @Html.Raw(INNCSUMPA.ISCINTERCOMPEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCINTERCOMPEN.CustomMessage)</div></div>
+	</div>
+} @* ISCINTERCOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCMEDREMICOMPEN.Visible) { // ISCMEDREMICOMPEN.Visible (begin)
+	<div id="r_ISCMEDREMICOMPEN" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCMEDREMICOMPEN" for="x_ISCMEDREMICOMPEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.Caption)@Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.CellAttributes)>
+<span id="el_INNCSUMPA_ISCMEDREMICOMPEN">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCMEDREMICOMPEN" name="x_ISCMEDREMICOMPEN" id="x_ISCMEDREMICOMPEN" size="30" maxlength="256" placeholder="@INNCSUMPA.ISCMEDREMICOMPEN.PlaceHolder" value="@INNCSUMPA.ISCMEDREMICOMPEN.EditValue" @Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCMEDREMICOMPEN.CustomMessage)</div></div>
+	</div>
+} @* ISCMEDREMICOMPEN.Visible (end) *@
+@if (INNCSUMPA.ISCNUMMESCOMPEN.Visible) { // ISCNUMMESCOMPEN.Visible (begin)
+	<div id="r_ISCNUMMESCOMPEN" class="form-group row">
+		<label id="elh_INNCSUMPA_ISCNUMMESCOMPEN" for="x_ISCNUMMESCOMPEN" class="@INNCSUMPA_Edit.LeftColumnClass">@Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.Caption)@Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.Required ? Language.Phrase("FieldRequiredIndicator") : "")</label>
+		<div class="@INNCSUMPA_Edit.RightColumnClass"><div @Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.CellAttributes)>
+<span id="el_INNCSUMPA_ISCNUMMESCOMPEN">
+<input type="text" data-table="INNCSUMPA" data-field="x_ISCNUMMESCOMPEN" name="x_ISCNUMMESCOMPEN" id="x_ISCNUMMESCOMPEN" size="30" placeholder="@INNCSUMPA.ISCNUMMESCOMPEN.PlaceHolder" value="@INNCSUMPA.ISCNUMMESCOMPEN.EditValue" @Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.EditAttributes)>
+</span>
+@Html.Raw(INNCSUMPA.ISCNUMMESCOMPEN.CustomMessage)</div></div>
+	</div>
+} @* ISCNUMMESCOMPEN.Visible (end) *@
+</div><!-- /page* -->
+@{ INNCSUMPA_Edit.CloseRecordset(); }
+@if (!INNCSUMPA_Edit.IsModal) {
+@:<div class="form-group row"><!-- buttons .form-group -->
+	@:<div class="@INNCSUMPA_Edit.OffsetColumnClass"><!-- buttons offset -->
+<button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit">@Html.Raw(Language.Phrase("SaveBtn"))</button>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-href="@AppPath(INNCSUMPA_Edit.ReturnUrl)">@Html.Raw(Language.Phrase("CancelBtn"))</button>
+	@:</div><!-- /buttons offset -->
+@:</div><!-- /buttons .form-group -->
+}
+</form>
+@INNCSUMPA_Edit.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>

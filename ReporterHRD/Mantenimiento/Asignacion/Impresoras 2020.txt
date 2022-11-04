@@ -1,0 +1,467 @@
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:00','CNDY387537','20/10/2020 10:00:00','20/10/2020 10:00:00','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:01','CND8BBC1RX','20/10/2020 10:00:01','20/10/2020 10:00:01','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:02','CNDY387967','20/10/2020 10:00:02','20/10/2020 10:00:02','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:03','CNF8H6LL7Z','20/10/2020 10:00:03','20/10/2020 10:00:03','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:04','CNF8H6N005','20/10/2020 10:00:04','20/10/2020 10:00:04','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:05','CNGS394294','20/10/2020 10:00:05','20/10/2020 10:00:05','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:06','CNCCDB30Z5','20/10/2020 10:00:06','20/10/2020 10:00:06','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:07','CNBCH3T083','20/10/2020 10:00:07','20/10/2020 10:00:07','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:08','CNBCH471KG','20/10/2020 10:00:08','20/10/2020 10:00:08','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:09','CNBK582858','20/10/2020 10:00:09','20/10/2020 10:00:09','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:10','CNB9H72BD2','20/10/2020 10:00:10','20/10/2020 10:00:10','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:11','E8BY246719','20/10/2020 10:00:11','20/10/2020 10:00:11','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:12','CNBCH3T07M','20/10/2020 10:00:12','20/10/2020 10:00:12','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:13','CNBK464489','20/10/2020 10:00:13','20/10/2020 10:00:13','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:14','CNB0J01079','20/10/2020 10:00:14','20/10/2020 10:00:14','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:15','CNB0J01300','20/10/2020 10:00:15','20/10/2020 10:00:15','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:16','CNGS346674','20/10/2020 10:00:16','20/10/2020 10:00:16','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:17','VND3B56051','20/10/2020 10:00:17','20/10/2020 10:00:17','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:18','CNB9134049','20/10/2020 10:00:18','20/10/2020 10:00:18','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:19','CNBK481461','20/10/2020 10:00:19','20/10/2020 10:00:19','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:20','CNBCH3T07S','20/10/2020 10:00:20','20/10/2020 10:00:20','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:21','PDB0010407','20/10/2020 10:00:21','20/10/2020 10:00:21','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:22','E8BY430240','20/10/2020 10:00:22','20/10/2020 10:00:22','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:23','VND4834347','20/10/2020 10:00:23','20/10/2020 10:00:23','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:24','CNB0060196','20/10/2020 10:00:24','20/10/2020 10:00:24','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:25','VND4735286','20/10/2020 10:00:25','20/10/2020 10:00:25','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:26','VND3B56033','20/10/2020 10:00:26','20/10/2020 10:00:26','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:27','VND4834337','20/10/2020 10:00:27','20/10/2020 10:00:27','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:28','CNDCG9R1B1','20/10/2020 10:00:28','20/10/2020 10:00:28','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:29','CN008I16R15001','20/10/2020 10:00:29','20/10/2020 10:00:29','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:30','CNB0060195','20/10/2020 10:00:30','20/10/2020 10:00:30','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:31','VND4835115','20/10/2020 10:00:31','20/10/2020 10:00:31','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:32','VND3805882','20/10/2020 10:00:32','20/10/2020 10:00:32','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:33','VNB3N27992','20/10/2020 10:00:33','20/10/2020 10:00:33','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:34','VND4805077','20/10/2020 10:00:34','20/10/2020 10:00:34','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:35','VND4805092','20/10/2020 10:00:35','20/10/2020 10:00:35','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:36','CNCCDB30GG','20/10/2020 10:00:36','20/10/2020 10:00:36','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:37','CNCCDB30JR','20/10/2020 10:00:37','20/10/2020 10:00:37','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:38','CNDCGBK2SM','20/10/2020 10:00:38','20/10/2020 10:00:38','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:39','CNDCG9R1B3','20/10/2020 10:00:39','20/10/2020 10:00:39','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:40','CNDCG9R1B6','20/10/2020 10:00:40','20/10/2020 10:00:40','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:41','CNBCD8Q1R2','20/10/2020 10:00:41','20/10/2020 10:00:41','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:42','CNDY438589','20/10/2020 10:00:42','20/10/2020 10:00:42','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:43','CNDY441013','20/10/2020 10:00:43','20/10/2020 10:00:43','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:44','CNDY279862','20/10/2020 10:00:44','20/10/2020 10:00:44','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:45','HAF0143433','20/10/2020 10:00:45','20/10/2020 10:00:45','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:46','HAF0204851','20/10/2020 10:00:46','20/10/2020 10:00:46','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:47','HAF0143449','20/10/2020 10:00:47','20/10/2020 10:00:47','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:48','CNCCDB30J9','20/10/2020 10:00:48','20/10/2020 10:00:48','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:49','CNDCG9R1B1','20/10/2020 10:00:49','20/10/2020 10:00:49','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:50','CNDCG9R19D','20/10/2020 10:00:50','20/10/2020 10:00:50','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:51','KBC0064288','20/10/2020 10:00:51','20/10/2020 10:00:51','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:52','CNBK464493','20/10/2020 10:00:52','20/10/2020 10:00:52','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:53','W98Y143749','20/10/2020 10:00:53','20/10/2020 10:00:53','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:54','PDB0010199','20/10/2020 10:00:54','20/10/2020 10:00:54','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:55','PDB0011636','20/10/2020 10:00:55','20/10/2020 10:00:55','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:56','RVYZ002824','20/10/2020 10:00:56','20/10/2020 10:00:56','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()																						
+ SqlDataVarios.InsertCommand ="INSERT INTO Sis_HV_Novedad(Id_Evento, Id_Equipo, Fech_Sol,Aud_Nov,Nota,Id_Sol,Id_Job,  Estado, Prioridad) VALUES ('sua011_20/10/2020 10:00:57','VND3B26028','20/10/2020 10:00:57','20/10/2020 10:00:57','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','GONZALEZ CARDOZO EMERSON FRANCISCO','ASI001','1','1080')"
+SqlDataVarios.Insert()
+
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:00','CNDY387537','HP LASERJET 4015N','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:00','MANTENIMIENTO','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:01','CND8BBC1RX','HP M1212nf','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:01','SECRETARIA GERENCIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:02','CNDY387967','HP LASERJET 4015','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:02','REVISORIA FISCAL','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:03','CNF8H6LL7Z','HP LASERJET 425DN','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:03','FACTURACION STA ROSA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:04','CNF8H6N005','HP LASERJET 425DN','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:04','INFORMACION','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:05','CNGS394294','HP LASERJET COLOR 2025','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:05','GESTION INFORMACION','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:06','CNCCDB30Z5','HP LASERJET M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:06','LECTURA RAYOS X','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:07','CNBCH3T083','HP LASERJET M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:07','CONSULTA EXTERNA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:08','CNBCH471KG','HP LASERJET M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:08','CONSULTA EXTERNA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:09','CNBK582858','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:09','TALENTO HUMANO','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:10','CNB9H72BD2','HP M127','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:10','CARTERA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:11','E8BY246719','EPSON FX 890','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:11','CONTABILIDAD','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:12','CNBCH3T07M','HP LASERJET M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:12','CARTERA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:13','CNBK464489','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:13','ARCHIVO CENTRAL','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:14','CNB0J01079','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:14','UROLOGIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:15','CNB0J01300','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:15','SIGAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:16','CNGS346674','HP LASERJET CP2025','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:16','COMUNICACIONES','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:17','VND3B56051','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:17','CARDIOLOGÍA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:18','CNB9134049','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:18','CONTROL INTERNO','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:19','CNBK481461','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:19','CONSULTORIO 5 CONSULTA EXTERNA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:20','CNBCH3T07S','HP LASERJET M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:20','OBSERVACION ADULTOS URG','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:21','PDB0010407','FUSORA M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:21','OBSERVACION ADULTOS URG','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:22','E8BY430240','EPSON FX 890','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:22','TESORERIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:23','VND4834347','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:23','TESORERIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:24','CNB0060196','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:24','PRESUPUESTO','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:25','VND4735286','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:25','PAGOS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:26','VND3B56033','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:26','COORDINACIÓN SANTA ROSA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:27','VND4834337','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:27','FACTURACIÓN SEDE SATIVA SUR','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:28','CNDCG9R1B1','HP LASERJET M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:28','FARMACIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:29','CN008I16R15001','FUSORA M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:29','FARMACIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:30','CNB0060195','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:30','ALMACEN','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:31','VND4835115','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:31','COORDINACION INTERNACION','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:32','VND3805882','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:32','BODEGA FARMACIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:33','VNB3N27992','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:33','SUBGERENCIA CIENTIFICA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:34','VND4805077','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:34','ECOGRAFO SALA DE PARTOS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:35','VND4805092','HP LASERJET 1006','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:35','CONSULTORIO SALA DE PARTOS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:36','CNCCDB30GG','HP laserjet M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:36','TALENTO HUMANO','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:37','CNCCDB30JR','HP laserjet M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:37','CALIDAD','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:38','CNDCGBK2SM','HP laserjet M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:38','ESTACION ENFERMERIA BLOQUE B1','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:39','CNDCG9R1B3','Hp Laserjet M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:39','GESTION INFORMACION estaba farmacia','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:40','CNDCG9R1B6','HP laserjet M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:40','ASEGURAMIENTO','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:41','CNBCD8Q1R2','HP laserjet M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:41','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:42','CNDY438589','HP LASERJET P4015','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:42','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:43','CNDY441013','HP LASERJET P4015','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:43','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:44','CNDY279862','HP LASERJET P4015','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:44','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:45','HAF0143433','FUSORA P4015N','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:45','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:46','HAF0204851','FUSORA P4015N','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:46','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:47','HAF0143449','FUSORA P4015N','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:47','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:48','CNCCDB30J9','HP LASERJET M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:48','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:49','CNDCG9R1B1','HP LASERJET M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:49','FARMACIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:50','CNDCG9R19D','HP LASERJET M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:50','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:51','KBC0064288','FUSORA M602','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:51','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:52','CNBK464493','HP LASERJET 1020','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:52','CONTABILIDAD','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:53','W98Y143749','MULTIFUNCIONAL EPSON L575','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:53','SATIVA SUR','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:54','PDB0010199','fusora M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:54','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:55','PDB0011636','FUSORA M605','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:55','OFICINA DE SISTEMAS','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:56','RVYZ002824','SCANNER EPSON GT-S85','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:56','REFERENCIA Y CONTRAREFERENCIA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_Historial(Id_Evento, Id_Equipo,NomEquipo, Actividad, Fech_En,Area,Id_Job, Estado,Tipo_Man, Prioridad)VALUES ('sua011_20/10/2020 10:00:57','VND3B26028','HP LaserJet P1606 dn','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:57','SALA DE CIRUGÍA','ASI001','1','5','1080')"
+        SqlDataVarios.Insert()
+
+
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:00','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:00')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:01','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:01')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:02','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:02')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:03','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:03')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:04','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:04')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:05','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:05')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:06','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:06')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:07','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:07')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:08','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:08')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:09','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:09')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:10','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:10')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:11','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:11')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:12','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:12')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:13','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:13')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:14','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:14')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:15','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:15')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:16','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:16')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:17','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:17')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:18','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:18')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:19','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:19')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:20','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:20')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:21','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:21')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:22','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:22')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:23','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:23')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:24','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:24')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:25','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:25')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:26','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:26')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:27','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:27')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:28','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:28')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:29','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:29')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:30','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:30')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:31','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:31')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:32','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:32')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:33','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:33')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:34','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:34')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:35','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:35')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:36','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:36')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:37','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:37')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:38','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:38')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:39','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:39')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:40','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:40')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:41','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:41')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:42','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:42')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:43','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:43')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:44','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:44')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:45','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:45')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:46','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:46')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:47','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:47')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:48','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:48')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:49','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:49')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:50','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:50')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:51','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:51')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:52','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:52')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:53','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:53')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:54','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:54')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:55','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:55')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:56','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:56')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:57','GONZALEZ CARDOZO EMERSON FRANCISCO','Mantenimiento preventivo de dispositivo según CONTRATO 220-2020','20/10/2020 10:00:57')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:00','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:00')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:01','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:01')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:02','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:02')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:03','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:03')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:04','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:04')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:05','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:05')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:06','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:06')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:07','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:07')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:08','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:08')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:09','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:09')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:10','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:10')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:11','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:11')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:12','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:12')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:13','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:13')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:14','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:14')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:15','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:15')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:16','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:16')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:17','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:17')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:18','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:18')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:19','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:19')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:20','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:20')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:21','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:21')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:22','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:22')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:23','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:23')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:24','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:24')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:25','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:25')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:26','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:26')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:27','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:27')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:28','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:28')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:29','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:29')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:30','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:30')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:31','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:31')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:32','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:32')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:33','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:33')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:34','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:34')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:35','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:35')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:36','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:36')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:37','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:37')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:38','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:38')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:39','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:39')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:40','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:40')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:41','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:41')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:42','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:42')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:43','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:43')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:44','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:44')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:45','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:45')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:46','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:46')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:47','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:47')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:48','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:48')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:49','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:49')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:50','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:50')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:51','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:51')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:52','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:52')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:53','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:53')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:54','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:54')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:55','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:55')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:56','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:56')"
+        SqlDataVarios.Insert()
+        SqlDataVarios.InsertCommand = "INSERT INTO Sis_HV_NOVHIST(Evento,  Realiza, NotaRealiza, Date) VALUES ('sua011_20/10/2020 10:00:57','GONZALEZ CARDOZO EMERSON FRANCISCO','Asigna como responsable a JOHANA MILENA GUTIERREZ P.','20/10/2020 10:00:57')"
+        SqlDataVarios.Insert()

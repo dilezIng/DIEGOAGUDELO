@@ -1,0 +1,209 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	VCNVISITANTE_Delete.Page_Render();
+
+	// Check action result
+	if (VCNVISITANTE_Delete.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "delete";
+var fVCNVISITANTEdelete = currentForm = new ew.Form("fVCNVISITANTEdelete", "delete");
+
+// Form_CustomValidate event
+fVCNVISITANTEdelete.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fVCNVISITANTEdelete.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+// Form object for search
+
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+@VCNVISITANTE_Delete.ShowPageHeader()
+@VCNVISITANTE_Delete.ShowMessages()
+<form name="fVCNVISITANTEdelete" id="fVCNVISITANTEdelete" class="form-inline ew-form ew-delete-form" action="@AppPath(CurrentPageName())" method="post">
+@if (VCNVISITANTE_Delete.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<input type="hidden" name="action" id="action" value="delete">
+@foreach (string key in VCNVISITANTE_Delete.RecordKeys) {
+<input type="hidden" name="key_m" value="@key">
+}
+<div class="card ew-card ew-grid">
+<div class="@(IsResponsiveLayout() ? "table-responsive " : "")card-body ew-grid-middle-panel">
+<table class="table ew-table">
+	<thead>
+	<tr class="ew-table-header">
+@if (VCNVISITANTE.OID.Visible) { // OID (begin)
+		<th class="@Html.Raw(VCNVISITANTE.OID.HeaderCellClass)"><span id="elh_VCNVISITANTE_OID" class="VCNVISITANTE_OID">@Html.Raw(VCNVISITANTE.OID.Caption)</span></th>
+} @* OID.Visible (end) *@
+@if (VCNVISITANTE.VTEDOCUMENTO.Visible) { // VTEDOCUMENTO (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTEDOCUMENTO" class="VCNVISITANTE_VTEDOCUMENTO">@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.Caption)</span></th>
+} @* VTEDOCUMENTO.Visible (end) *@
+@if (VCNVISITANTE.VTETIPODOCUM.Visible) { // VTETIPODOCUM (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTETIPODOCUM.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTETIPODOCUM" class="VCNVISITANTE_VTETIPODOCUM">@Html.Raw(VCNVISITANTE.VTETIPODOCUM.Caption)</span></th>
+} @* VTETIPODOCUM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRINOM.Visible) { // VTEPRINOM (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTEPRINOM.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTEPRINOM" class="VCNVISITANTE_VTEPRINOM">@Html.Raw(VCNVISITANTE.VTEPRINOM.Caption)</span></th>
+} @* VTEPRINOM.Visible (end) *@
+@if (VCNVISITANTE.VTESEGNOM.Visible) { // VTESEGNOM (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTESEGNOM.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTESEGNOM" class="VCNVISITANTE_VTESEGNOM">@Html.Raw(VCNVISITANTE.VTESEGNOM.Caption)</span></th>
+} @* VTESEGNOM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRIAPE.Visible) { // VTEPRIAPE (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTEPRIAPE.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTEPRIAPE" class="VCNVISITANTE_VTEPRIAPE">@Html.Raw(VCNVISITANTE.VTEPRIAPE.Caption)</span></th>
+} @* VTEPRIAPE.Visible (end) *@
+@if (VCNVISITANTE.VTESEGAPE.Visible) { // VTESEGAPE (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTESEGAPE.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTESEGAPE" class="VCNVISITANTE_VTESEGAPE">@Html.Raw(VCNVISITANTE.VTESEGAPE.Caption)</span></th>
+} @* VTESEGAPE.Visible (end) *@
+@if (VCNVISITANTE.VTEGENERO.Visible) { // VTEGENERO (begin)
+		<th class="@Html.Raw(VCNVISITANTE.VTEGENERO.HeaderCellClass)"><span id="elh_VCNVISITANTE_VTEGENERO" class="VCNVISITANTE_VTEGENERO">@Html.Raw(VCNVISITANTE.VTEGENERO.Caption)</span></th>
+} @* VTEGENERO.Visible (end) *@
+@if (VCNVISITANTE.OptimisticLockField.Visible) { // OptimisticLockField (begin)
+		<th class="@Html.Raw(VCNVISITANTE.OptimisticLockField.HeaderCellClass)"><span id="elh_VCNVISITANTE_OptimisticLockField" class="VCNVISITANTE_OptimisticLockField">@Html.Raw(VCNVISITANTE.OptimisticLockField.Caption)</span></th>
+} @* OptimisticLockField.Visible (end) *@
+	</tr>
+	</thead>
+	<tbody>
+@{ VCNVISITANTE_Delete.RecordCount = 0; }
+@while (VCNVISITANTE_Delete.Recordset != null && await VCNVISITANTE_Delete.Recordset.ReadAsync()) { // DN
+	VCNVISITANTE_Delete.RecordCount++;
+	VCNVISITANTE_Delete.RowCnt++;
+
+	// Set row properties
+	VCNVISITANTE_Delete.ResetAttributes();
+	VCNVISITANTE_Delete.RowType = Config.RowTypeView; // View
+
+	// Get the field contents
+	await VCNVISITANTE_Delete.LoadRowValues(VCNVISITANTE_Delete.Recordset);
+
+	// Render row
+	await VCNVISITANTE_Delete.RenderRow();
+	<tr @Html.Raw(VCNVISITANTE_Delete.RowAttributes)>
+@if (VCNVISITANTE.OID.Visible) { // OID (begin)
+		<td @Html.Raw(VCNVISITANTE.OID.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_OID" class="VCNVISITANTE_OID">
+<span @Html.Raw(VCNVISITANTE.OID.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.OID.GetViewValue())</span>
+</span>
+</td>
+} @* OID.Visible (end) *@
+@if (VCNVISITANTE.VTEDOCUMENTO.Visible) { // VTEDOCUMENTO (begin)
+		<td @Html.Raw(VCNVISITANTE.VTEDOCUMENTO.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTEDOCUMENTO" class="VCNVISITANTE_VTEDOCUMENTO">
+<span @Html.Raw(VCNVISITANTE.VTEDOCUMENTO.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.GetViewValue())</span>
+</span>
+</td>
+} @* VTEDOCUMENTO.Visible (end) *@
+@if (VCNVISITANTE.VTETIPODOCUM.Visible) { // VTETIPODOCUM (begin)
+		<td @Html.Raw(VCNVISITANTE.VTETIPODOCUM.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTETIPODOCUM" class="VCNVISITANTE_VTETIPODOCUM">
+<span @Html.Raw(VCNVISITANTE.VTETIPODOCUM.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTETIPODOCUM.GetViewValue())</span>
+</span>
+</td>
+} @* VTETIPODOCUM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRINOM.Visible) { // VTEPRINOM (begin)
+		<td @Html.Raw(VCNVISITANTE.VTEPRINOM.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTEPRINOM" class="VCNVISITANTE_VTEPRINOM">
+<span @Html.Raw(VCNVISITANTE.VTEPRINOM.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEPRINOM.GetViewValue())</span>
+</span>
+</td>
+} @* VTEPRINOM.Visible (end) *@
+@if (VCNVISITANTE.VTESEGNOM.Visible) { // VTESEGNOM (begin)
+		<td @Html.Raw(VCNVISITANTE.VTESEGNOM.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTESEGNOM" class="VCNVISITANTE_VTESEGNOM">
+<span @Html.Raw(VCNVISITANTE.VTESEGNOM.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTESEGNOM.GetViewValue())</span>
+</span>
+</td>
+} @* VTESEGNOM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRIAPE.Visible) { // VTEPRIAPE (begin)
+		<td @Html.Raw(VCNVISITANTE.VTEPRIAPE.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTEPRIAPE" class="VCNVISITANTE_VTEPRIAPE">
+<span @Html.Raw(VCNVISITANTE.VTEPRIAPE.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEPRIAPE.GetViewValue())</span>
+</span>
+</td>
+} @* VTEPRIAPE.Visible (end) *@
+@if (VCNVISITANTE.VTESEGAPE.Visible) { // VTESEGAPE (begin)
+		<td @Html.Raw(VCNVISITANTE.VTESEGAPE.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTESEGAPE" class="VCNVISITANTE_VTESEGAPE">
+<span @Html.Raw(VCNVISITANTE.VTESEGAPE.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTESEGAPE.GetViewValue())</span>
+</span>
+</td>
+} @* VTESEGAPE.Visible (end) *@
+@if (VCNVISITANTE.VTEGENERO.Visible) { // VTEGENERO (begin)
+		<td @Html.Raw(VCNVISITANTE.VTEGENERO.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_VTEGENERO" class="VCNVISITANTE_VTEGENERO">
+<span @Html.Raw(VCNVISITANTE.VTEGENERO.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEGENERO.GetViewValue())</span>
+</span>
+</td>
+} @* VTEGENERO.Visible (end) *@
+@if (VCNVISITANTE.OptimisticLockField.Visible) { // OptimisticLockField (begin)
+		<td @Html.Raw(VCNVISITANTE.OptimisticLockField.CellAttributes)>
+<span id="el@(VCNVISITANTE_Delete.RowCnt)_VCNVISITANTE_OptimisticLockField" class="VCNVISITANTE_OptimisticLockField">
+<span @Html.Raw(VCNVISITANTE.OptimisticLockField.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.OptimisticLockField.GetViewValue())</span>
+</span>
+</td>
+} @* OptimisticLockField.Visible (end) *@
+	</tr>
+}
+@{ VCNVISITANTE_Delete.CloseRecordset(); }
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<button class="btn btn-primary ew-btn" name="btn-action" id="btn-action" type="submit">@Html.Raw(Language.Phrase("DeleteBtn"))</button>
+<button class="btn btn-default ew-btn" name="btn-cancel" id="btn-cancel" type="button" data-href="@AppPath(VCNVISITANTE_Delete.ReturnUrl)">@Language.Phrase("CancelBtn")</button>
+</div>
+</form>
+@VCNVISITANTE_Delete.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>

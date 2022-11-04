@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="DC.title" content="Clinica Clinica" />
+        <meta name="DC.date" content="2020-09-29 10:46:08 " />
+        <meta name="DC.language" content="ENU" />
+
+<meta name="google" value="notranslate" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Created by Dilez.ing</title>
+
+
+</head>
+<body>
+<script> 
+var video = document.getElementById("videoPlayer");
+function playPause() { 
+    if (video.paused) 
+        video.play(); 
+    else 
+        video.pause(); 
+}
+function reload() { 
+   video.load(); 
+}
+function makeLarge() { 
+    video.width = 1000; 
+}
+function makeSmall() { 
+    video.width = 250; 
+} 
+function makeNormal() { 
+    video.width = 500; 
+} 
+</script>
+
+<video width="800" height="600" controls autoplay>
+    <source src="1.mp4" type="video/mp4">
+    Tu navegador no soporta los vídeos de HTML5
+</video>
+</body>
+</html>

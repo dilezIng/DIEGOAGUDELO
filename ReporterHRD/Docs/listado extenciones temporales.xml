@@ -1,0 +1,677 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>AUXILIAR SISTEMAS</Author>
+  <LastAuthor>PC-DESARROLLO-1</LastAuthor>
+  <Created>2020-06-19T22:17:51Z</Created>
+  <LastSaved>2020-06-19T22:21:49Z</LastSaved>
+  <Company>Windows</Company>
+  <Version>15.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>11835</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s16">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s17">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s18">
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s19">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s20">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Hoja1">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="112" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+   <Column ss:StyleID="s16" ss:Width="60.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="159"/>
+   <Column ss:Width="174.75"/>
+   <Row>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">EXTENSIÓN</Data></Cell>
+    <Cell ss:StyleID="s17"><Data ss:Type="String">DEPENDENCIA</Data></Cell>
+    <Cell ss:StyleID="s17"><Data ss:Type="String">UBICACIÓN</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1501</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">TESORERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s20"><Data ss:Type="Number">1505</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">GERENCIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1506</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">SUBGERENCIA ADMINISTRATIVA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1507</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">SECRETARIA SUB-CIENTIFICA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1508</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">SECRETARIA GERENCIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1510</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">SECRETARIA ADMINISTRATIVA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1511</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">COSTOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1512</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">PRESUPUESTO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1513</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">PAGOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1514</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER CONTABILIDAD</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1515</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER SIAU</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1516</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">AUX SIAU</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1517</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">AUX SOAT</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1560</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">RECEPCION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1577</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">ESTADISTICA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1578</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">COMUNICACIONES</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1581</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">MANTENIMIENTO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1586</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">AUDITOR MEDICO-02</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1585</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER AUDITORIA MEDICA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1587</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">AUDITOR MEDICO-01</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1589</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER GESTION FINANCIERA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1619</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">FACTURACION AUXILIAR </Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1620</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">FACTURACION AUXILIAR </Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1621</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER FACTURACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1622</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">GESTION DE INFORMACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1623</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER GESTION DE INFORMACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1624</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">GESTION DE INFORMACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1628</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">CONTRATACION AUXILIAR</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1626</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER TALENTO HUMANO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1627</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">AUXILIAR TALENTO HUMANO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1629</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER CONTRATACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1630</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">ASESOR JURICO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1631</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">AUXILIAR TALENTO HUMANO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1632</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER APOYO TERAPEUTICO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1633</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER CALIDAD</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1634</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">SEGURIDAD PACIENTE</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1635</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">APOYO CALIDAD</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1636</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER MERCADEO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1637</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">DESARROLLO ORGANIZACIONAL</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1638</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER SIGASST</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1645</Data></Cell>
+    <Cell><Data ss:Type="String">ADMINISTRATIVO</Data></Cell>
+    <Cell><Data ss:Type="String">CONTROL INTERNO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1579</Data></Cell>
+    <Cell><Data ss:Type="String">ALMACEN</Data></Cell>
+    <Cell><Data ss:Type="String">AUX-ALMACEN</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1580</Data></Cell>
+    <Cell><Data ss:Type="String">ALMACEN</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER ALMACEN</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1588</Data></Cell>
+    <Cell><Data ss:Type="String">ARCHIVO CENTRAL</Data></Cell>
+    <Cell><Data ss:Type="String">ARCHIVO CENTRAL</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1543</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA-URG-SALIDAS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1544</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA-URG-CRYC</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1545</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">AUTORIZACIONES </Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="Number">1518</Data></Cell>
+    <Cell ss:StyleID="s18"><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell ss:StyleID="s18"><Data ss:Type="String">CONSULTORIO 10</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1519</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">REHABILITACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1520</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO FISIATRIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1521</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">AUTORIZACIONES</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1523</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">LABORATORIO FACTURACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1530</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 2 </Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1531</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CIRUGIA AMBULATORIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1532</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1533</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1535</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1534</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 6 (IAMMI JEFES)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1536</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">VACUNACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1537</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA 1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1538</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA 2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1539</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA 3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1592</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTA EXTERNA</Data></Cell>
+    <Cell><Data ss:Type="String">CAJAS 4 -CITAS RX</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1552</Data></Cell>
+    <Cell><Data ss:Type="String">FARMACIA PRINCIPAL</Data></Cell>
+    <Cell><Data ss:Type="String">FARMACIA QUIMICA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1554</Data></Cell>
+    <Cell><Data ss:Type="String">FARMACIA PRINCIPAL</Data></Cell>
+    <Cell><Data ss:Type="String">FARMACIA PRINCIPAL VENTANILLA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1503</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE C2-ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="Number">1504</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE C2-MEDICOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1572</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE C3-ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1573</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE C3-MEDICOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1575</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B1 - UCI- ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1574</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B1-ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1576</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE A1-ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1582</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B1-</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1583</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B1-CONSULTORIO 1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1584</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B1-CONSULTORIO 2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1590</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B2-ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1591</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE B2-MEDICOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1593</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER INTERNACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1594</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER CLINICA QUIRURGICA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1611</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">LIDER REFERENCIA-CONTRA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1612</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">REFERENCIA-CONTRA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1614</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE A2-ENEFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1615</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">BLOQUE A2-MEDICOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1616</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">SALA ENFERMERIA-EDUCACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1617</Data></Cell>
+    <Cell><Data ss:Type="String">HOSPITALIZACION</Data></Cell>
+    <Cell><Data ss:Type="String">CAJA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1551</Data></Cell>
+    <Cell><Data ss:Type="String">OBSERVACION URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">OBS-URG-PEDIATRIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1524</Data></Cell>
+    <Cell><Data ss:Type="String">RX-IMAGINOLOGIA</Data></Cell>
+    <Cell><Data ss:Type="String">TAC</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1525</Data></Cell>
+    <Cell><Data ss:Type="String">RX-IMAGINOLOGIA</Data></Cell>
+    <Cell><Data ss:Type="String">RX-TOMA </Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1526</Data></Cell>
+    <Cell><Data ss:Type="String">RX-IMAGINOLOGIA</Data></Cell>
+    <Cell><Data ss:Type="String">RX-TROMBOLISIS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1527</Data></Cell>
+    <Cell><Data ss:Type="String">RX-IMAGINOLOGIA</Data></Cell>
+    <Cell><Data ss:Type="String">RX-LECTURA-IMÁGENES</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1528</Data></Cell>
+    <Cell><Data ss:Type="String">RX-IMAGINOLOGIA</Data></Cell>
+    <Cell><Data ss:Type="String">RX-SALA ECOGRAFIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1555</Data></Cell>
+    <Cell><Data ss:Type="String">SALA CIRUGIA</Data></Cell>
+    <Cell><Data ss:Type="String">FARMACIA SALA CIRUGIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1556</Data></Cell>
+    <Cell><Data ss:Type="String">SALA CIRUGIA</Data></Cell>
+    <Cell><Data ss:Type="String">QX-FACTURACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1557</Data></Cell>
+    <Cell><Data ss:Type="String">SALA CIRUGIA</Data></Cell>
+    <Cell><Data ss:Type="String">ADMISIONES-QX-</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1563</Data></Cell>
+    <Cell><Data ss:Type="String">SALA CIRUGIA</Data></Cell>
+    <Cell><Data ss:Type="String">ESTACION MEDICOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="Number">1549</Data></Cell>
+    <Cell><Data ss:Type="String">SALA PARTOS</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO GINECOLOGIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1553</Data></Cell>
+    <Cell><Data ss:Type="String">SALA PARTOS</Data></Cell>
+    <Cell><Data ss:Type="String">SALA PARTOS OBSERVACION (JEFES)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1541</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">CONS-1-PEDIATRIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1540</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">CONS-2-PEDIATRIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1542</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">JEFES ENFERMERIA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1546</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">ENFERMERIA 2 URG (LENOVOS)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1547</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">SALA ERA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1548</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">SALA EDA</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1550</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">TRIAGE</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1565</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">OBS-ADULTOS-INTERNOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1566</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">OBS-ADULTOS-MEDICOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1567</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">PROCEDIMIENTOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1568</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">REANIMACION</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1569</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">SALA YESOS</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1570</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1571</Data></Cell>
+    <Cell><Data ss:Type="String">URGENCIAS</Data></Cell>
+    <Cell><Data ss:Type="String">CONSULTORIO 2 </Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R1048576</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Hoja2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Hoja3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

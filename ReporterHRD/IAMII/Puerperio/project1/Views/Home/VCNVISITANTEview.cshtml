@@ -1,0 +1,198 @@
+@{
+
+	// Layout
+	Layout = "_Layout";
+
+	// View
+	View = this;
+	SetClientVar("login", LoginStatus);
+
+	// Global Page Rendering event
+	Page_Rendering();
+
+	// Page Render event
+	VCNVISITANTE_View.Page_Render();
+
+	// Check action result
+	if (VCNVISITANTE_View.ActionResult is EmptyResult) { // Terminate page
+		return;
+	}
+
+	#pragma warning disable 168
+
+	// Local variables (Temp data)
+	string sqlWrk, filterWrk, whereWrk, curVal;
+	List<Dictionary<string, object>> rswrk;
+	string[] arWrk;
+	List<object> listWrk;
+	Func<string> lookupFilter;
+
+	#pragma warning restore 168
+
+}
+@if (!VCNVISITANTE.IsExport()) {
+<script>
+
+// Form object
+var CurrentPageID = ew.PAGE_ID = "view";
+var fVCNVISITANTEview = currentForm = new ew.Form("fVCNVISITANTEview", "view");
+
+// Form_CustomValidate event
+fVCNVISITANTEview.Form_CustomValidate = function(fobj) { // DO NOT CHANGE THIS LINE!
+
+	// Your custom validation code here, return false if invalid.
+	return true;
+}
+
+// Use JavaScript validation or not remove PROJ.ProgramLanguage
+fVCNVISITANTEview.validateRequired = @ConvertToJson(Config.ClientValidate);
+
+// Dynamic selection lists
+// Form object for search
+
+</script>
+<script>
+
+// Write your client script here, no need to add script tags.
+</script>
+}
+@if (!VCNVISITANTE.IsExport()) {
+<div class="btn-toolbar ew-toolbar">
+	@VCNVISITANTE_View.ExportOptions.RenderBody()
+	@VCNVISITANTE_View.OtherOptions.RenderBody()
+	<div class="clearfix"></div>
+</div>
+}
+@VCNVISITANTE_View.ShowPageHeader()
+@VCNVISITANTE_View.ShowMessages()
+<form name="fVCNVISITANTEview" id="fVCNVISITANTEview" class="form-inline ew-form ew-view-form" method="post">
+@if (VCNVISITANTE_View.CheckToken) {
+	@Html.AntiForgeryToken()
+}
+<input type="hidden" name="modal" value="@ConvertToInt(VCNVISITANTE_View.IsModal)">
+<table class="table table-striped table-sm ew-view-table">
+@if (VCNVISITANTE.OID.Visible) { @* VCNVISITANTE.OID.Visible (begin) *@
+	<tr id="r_OID">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_OID">@Html.Raw(VCNVISITANTE.OID.Caption)</span></td>
+		<td data-name="OID" @Html.Raw(VCNVISITANTE.OID.CellAttributes)>
+<span id="el_VCNVISITANTE_OID">
+<span @Html.Raw(VCNVISITANTE.OID.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.OID.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.OID.Visible (end) *@
+@if (VCNVISITANTE.VTEDOCUMENTO.Visible) { @* VCNVISITANTE.VTEDOCUMENTO.Visible (begin) *@
+	<tr id="r_VTEDOCUMENTO">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTEDOCUMENTO">@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.Caption)</span></td>
+		<td data-name="VTEDOCUMENTO" @Html.Raw(VCNVISITANTE.VTEDOCUMENTO.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEDOCUMENTO">
+<span @Html.Raw(VCNVISITANTE.VTEDOCUMENTO.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEDOCUMENTO.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTEDOCUMENTO.Visible (end) *@
+@if (VCNVISITANTE.VTETIPODOCUM.Visible) { @* VCNVISITANTE.VTETIPODOCUM.Visible (begin) *@
+	<tr id="r_VTETIPODOCUM">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTETIPODOCUM">@Html.Raw(VCNVISITANTE.VTETIPODOCUM.Caption)</span></td>
+		<td data-name="VTETIPODOCUM" @Html.Raw(VCNVISITANTE.VTETIPODOCUM.CellAttributes)>
+<span id="el_VCNVISITANTE_VTETIPODOCUM">
+<span @Html.Raw(VCNVISITANTE.VTETIPODOCUM.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTETIPODOCUM.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTETIPODOCUM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRINOM.Visible) { @* VCNVISITANTE.VTEPRINOM.Visible (begin) *@
+	<tr id="r_VTEPRINOM">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTEPRINOM">@Html.Raw(VCNVISITANTE.VTEPRINOM.Caption)</span></td>
+		<td data-name="VTEPRINOM" @Html.Raw(VCNVISITANTE.VTEPRINOM.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEPRINOM">
+<span @Html.Raw(VCNVISITANTE.VTEPRINOM.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEPRINOM.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTEPRINOM.Visible (end) *@
+@if (VCNVISITANTE.VTESEGNOM.Visible) { @* VCNVISITANTE.VTESEGNOM.Visible (begin) *@
+	<tr id="r_VTESEGNOM">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTESEGNOM">@Html.Raw(VCNVISITANTE.VTESEGNOM.Caption)</span></td>
+		<td data-name="VTESEGNOM" @Html.Raw(VCNVISITANTE.VTESEGNOM.CellAttributes)>
+<span id="el_VCNVISITANTE_VTESEGNOM">
+<span @Html.Raw(VCNVISITANTE.VTESEGNOM.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTESEGNOM.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTESEGNOM.Visible (end) *@
+@if (VCNVISITANTE.VTEPRIAPE.Visible) { @* VCNVISITANTE.VTEPRIAPE.Visible (begin) *@
+	<tr id="r_VTEPRIAPE">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTEPRIAPE">@Html.Raw(VCNVISITANTE.VTEPRIAPE.Caption)</span></td>
+		<td data-name="VTEPRIAPE" @Html.Raw(VCNVISITANTE.VTEPRIAPE.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEPRIAPE">
+<span @Html.Raw(VCNVISITANTE.VTEPRIAPE.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEPRIAPE.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTEPRIAPE.Visible (end) *@
+@if (VCNVISITANTE.VTESEGAPE.Visible) { @* VCNVISITANTE.VTESEGAPE.Visible (begin) *@
+	<tr id="r_VTESEGAPE">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTESEGAPE">@Html.Raw(VCNVISITANTE.VTESEGAPE.Caption)</span></td>
+		<td data-name="VTESEGAPE" @Html.Raw(VCNVISITANTE.VTESEGAPE.CellAttributes)>
+<span id="el_VCNVISITANTE_VTESEGAPE">
+<span @Html.Raw(VCNVISITANTE.VTESEGAPE.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTESEGAPE.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTESEGAPE.Visible (end) *@
+@if (VCNVISITANTE.VTEGENERO.Visible) { @* VCNVISITANTE.VTEGENERO.Visible (begin) *@
+	<tr id="r_VTEGENERO">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTEGENERO">@Html.Raw(VCNVISITANTE.VTEGENERO.Caption)</span></td>
+		<td data-name="VTEGENERO" @Html.Raw(VCNVISITANTE.VTEGENERO.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEGENERO">
+<span @Html.Raw(VCNVISITANTE.VTEGENERO.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.VTEGENERO.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTEGENERO.Visible (end) *@
+@if (VCNVISITANTE.VTEFOTO.Visible) { @* VCNVISITANTE.VTEFOTO.Visible (begin) *@
+	<tr id="r_VTEFOTO">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_VTEFOTO">@Html.Raw(VCNVISITANTE.VTEFOTO.Caption)</span></td>
+		<td data-name="VTEFOTO" @Html.Raw(VCNVISITANTE.VTEFOTO.CellAttributes)>
+<span id="el_VCNVISITANTE_VTEFOTO">
+<span @Html.Raw(VCNVISITANTE.VTEFOTO.ViewAttributes)>
+@Html.Raw(await GetFileViewTag(VCNVISITANTE.VTEFOTO, Convert.ToString(VCNVISITANTE.VTEFOTO.GetViewValue())))
+</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.VTEFOTO.Visible (end) *@
+@if (VCNVISITANTE.OptimisticLockField.Visible) { @* VCNVISITANTE.OptimisticLockField.Visible (begin) *@
+	<tr id="r_OptimisticLockField">
+		<td class="@VCNVISITANTE_View.TableLeftColumnClass"><span id="elh_VCNVISITANTE_OptimisticLockField">@Html.Raw(VCNVISITANTE.OptimisticLockField.Caption)</span></td>
+		<td data-name="OptimisticLockField" @Html.Raw(VCNVISITANTE.OptimisticLockField.CellAttributes)>
+<span id="el_VCNVISITANTE_OptimisticLockField">
+<span @Html.Raw(VCNVISITANTE.OptimisticLockField.ViewAttributes)>
+@Html.Raw(VCNVISITANTE.OptimisticLockField.GetViewValue())</span>
+</span>
+</td>
+	</tr>
+} @* VCNVISITANTE.OptimisticLockField.Visible (end) *@
+</table>
+@{ VCNVISITANTE_View.CloseRecordset(); }
+</form>
+@VCNVISITANTE_View.ShowPageFooter()
+@ShowDebugMessage()
+@ElapsedTime()
+@if (!VCNVISITANTE.IsExport()) {
+<script>
+
+// Write your table-specific startup script here
+// document.write("page loaded");
+
+</script>
+}
